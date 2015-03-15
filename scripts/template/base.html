@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8"> <![endif]-->
+<!--[if IE 9]> <html class="ie9"> <![endif]-->
+<!--[if !IE]><!--> 
+<html> <!--<![endif]-->
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="FABMI">
+        <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic%7CPT+Gudea:400,700,400italic%7CPT+Oswald:400,700,300' rel='stylesheet' id="googlefont">
+        
+        <link rel="stylesheet" href="{{relativedir}}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{relativedir}}/css/prettyPhoto.css">
+        <link rel="stylesheet" href="{{relativedir}}/css/colpick.css">
+        <link rel="stylesheet" href="{{relativedir}}/css/owl.carousel.css">
+        <link rel="stylesheet" href="{{relativedir}}/css/style.css">
+        <link rel="stylesheet" href="{{relativedir}}/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="http://cdn.webrupee.com/font">
+        
+        <!-- Favicon and apple Icons -->
+        <link rel="icon" type="image/png" href="{{relativedir}}/images/icons/icon.html">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{relativedir}}/images/icons/apple-icon-57x57.html">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{relativedir}}/images/icons/apple-icon-72x72.html">
+        
+        <!--- jQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{relativedir}}/js/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <!--- Modernizr -->
+        <script src="{{relativedir}}/js/modernizr.custom.js"></script>
+        
+        <!--[if lt IE 9]>
+            <script src="{{relativedir}}/js/html5shiv.js"></script>
+            <script src="{{relativedir}}/js/respond.min.js"></script>
+        <![endif]-->
+        
+        <style id="custom-style">
+        
+        </style>
+        {% endblock head%}        
+    </head>
+    <body>
+
+    <div id="wrapper">
+        <header id="header">
+           
+            <div id="inner-header">
+                
+                <div id="main-nav-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 clearfix">
+                                <div id="menu-wrapper" class="clearfix">
+                                    <div class="logo-container">
+                                    <h1 class="logo clearfix">
+                                        <span>FabMi- Fabulous Me</span>
+                                        <a href="/index.html" title="FabMi"><img src="{{relativedir}}/images/logo.png" alt="FabMi" width="184" height="60"></a>
+                                    </h1>
+                                </div><!-- End .logo-container -->
+                                <div id="menu-right-side" class="clearfix">
+                                    <nav id="main-nav">
+                                        <div id="responsive-nav">
+                                            <div id="responsive-nav-button">
+                                                Menu <span id="responsive-nav-button-icon"></span>
+                                            </div><!-- responsive-nav-button -->
+                                        </div>
+                                        <ul class="menu clearfix">
+                                            <li>
+                                                <a class="active" href="/index.html">HOME</a>
+                                           </li>
+                                            <li class="mega-menu-container"><a href="#">SHOP</a>
+                                                <div class="mega-menu clearfix">
+                                                        <div class="col-5">
+                                                            <a href="/apple/apple.html" class="mega-menu-title">apple</a><!-- End .mega-menu-title -->
+                                                            <ul class="mega-menu-list clearfix">
+                                                                <li><a href="/apple/tops_shirts.html">Tops &amp; T-Shirts</a></li>
+                                                                <li><a href="/apple/coats_jackets.html">Coats &amp; Jackets</a></li>
+                                                                <li><a href="/apple/jeans_trousers.html">Jeans &amp; Trousers</a></li>
+                                                                <li><a href="/apple/skirts_dresses.html">Skirts &amp; Dresses</a></li>
+                                                                <li><a href="/apple/shorts_capris.html">Shorts &amp; Capris</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-5 -->
+                                                        <div class="col-5">
+                                                            <a href="/hourglass/hourglass.html" class="mega-menu-title">Hourglass</a><!-- End .mega-menu-title -->
+                                                            <ul class="mega-menu-list clearfix">
+                                                                <li><a href="/hourglass/tops_shirts.html">Tops &amp; T-Shirts</a></li>
+                                                                <li><a href="/hourglass/coats_jackets.html">Coats &amp;Jackets</a></li>
+                                                                <li><a href="/hourglass/jeans_trousers.html">Jeans &amp; Trousers</a></li>
+                                                                <li><a href="/hourglass/skirts_dresses.html">Skirts &amp; Dresses</a></li>
+                                                                <li><a href="/hourglass/shorts_capris.html">Shorts &amp; Capris</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-5 -->
+                                                        <div class="col-5">
+                                                            <a href="/invtriangle/invtriangle.html" class="mega-menu-title">Inverted Triangle</a><!-- End .mega-menu-title -->
+                                                            <ul class="mega-menu-list clearfix">
+                                                                <li><a href="/invtriangle/tops_shirts.html">Tops &amp; T-Shirts</a></li>
+                                                                <li><a href="/invtriangle/coats_jackets.html">Coats &amp;Jackets</a></li>
+                                                                <li><a href="/invtriangle/jeans_trousers.html">Jeans &amp; Trousers</a></li>
+                                                                <li><a href="/invtriangle/skirts_dresses.html">Skirts &amp; Dresses</a></li>
+                                                                <li><a href="/invtriangle/shorts_capris.html">Shorts &amp; Capris</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-5 -->
+                                                        <div class="col-5">
+                                                            <a href="/rectangle/rectangle.html" class="mega-menu-title">Rectangle</a><!-- End .mega-menu-title -->
+                                                            <ul class="mega-menu-list clearfix">
+                                                                <li><a href="/rectangle/tops_shirts.html">Tops &amp; T-Shirts</a></li>
+                                                                <li><a href="/rectangle/coats_jackets.html">Coats &amp;Jackets</a></li>
+                                                                <li><a href="/rectangle/jeans_trousers.html">Jeans &amp; Trousers</a></li>
+                                                                <li><a href="/rectangle/skirts_dresses.html">Skirts &amp; Dresses</a></li>
+                                                                <li><a href="/rectangle/shorts_capris.html">Shorts &amp; Capris</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-5 -->
+                                                        
+                                                        <div class="col-5">
+                                                            <a href="/pear/pear.html" class="mega-menu-title">Pear</a><!-- End .mega-menu-title -->
+                                                            <ul class="mega-menu-list clearfix">
+                                                                <li><a href="/pear/tops_shirts.html">Tops &amp; T-Shirts</a></li>
+                                                                <li><a href="/pear/coats_jackets.html">Coats &amp;Jackets</a></li>
+                                                                <li><a href="/pear/jeans_trousers.html">Jeans &amp; Trousers</a></li>
+                                                                <li><a href="/pear/skirts_dresses.html">Skirts &amp; Dresses</a></li>
+                                                                <li><a href="/pear/shorts_capris.html">Shorts &amp; Capris</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-5 -->
+                                                </div><!-- End .mega-menu -->
+                                            </li>
+                                            <li><a href="/contact.html">Contact Us</a></li>
+                                        </ul>
+                                        
+                                    </nav>
+                                </div><!-- End #menu-right-side -->
+                                </div><!-- End #menu-wrapper -->
+                                
+                            </div><!-- End .col-md-12 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+                    
+                </div><!-- End #nav -->
+            </div><!-- End #inner-header -->
+        </header><!-- End #header -->
+
+        <section id="content">
+            {% block content %}{% endblock content %}
+        </section><!-- End #content -->
+        
+        <footer id="footer">
+            {% block footer %}
+            <hr>
+            <div id="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7 col-xs-12 footer-social-links-container">
+                            <ul class="social-links clearfix">
+                                <li><a href="http://facebook.com/fabmi.in" class="social-icon icon-facebook" target="_blank"></a></li>
+                                <li><a href="mailto:someone@example.com?Subject=Hello%20again" class="social-icon icon-email"></a></li>
+                            </ul>
+                        </div><!-- End .col-md-7 -->
+                        
+                        <div class="col-md-5 col-sm-5 col-xs-12 footer-text-container">
+                            <p>&copy; 2015 Powered by FabMi&trade;. All Rights Reserved.</p>
+                        </div><!-- End .col-md-5 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End #footer-bottom -->
+            {% endblock %} 
+        </footer><!-- End #footer -->
+    </div><!-- End #wrapper -->
+    <a href="#" id="scroll-top" title="Scroll to Top"><i class="fa fa-angle-up"></i></a><!-- End #scroll-top -->
+    <!-- END -->
+    {% block jsscripts %}
+	<script src="{{relativedir}}/js/bootstrap.min.js"></script>
+    <script src="{{relativedir}}/js/smoothscroll.js"></script>
+    <script src="{{relativedir}}/js/retina-1.1.0.min.js"></script>
+    <script src="{{relativedir}}/js/jquery.placeholder.js"></script>
+    <script src="{{relativedir}}/js/jquery.hoverIntent.min.js"></script>
+	<script src="{{relativedir}}/js/twitter/jquery.tweet.min.js"></script>
+	<script src="{{relativedir}}/js/jquery.flexslider-min.js"></script>
+    <script src="{{relativedir}}/js/owl.carousel.min.js"></script>
+	<script src="{{relativedir}}/js/jflickrfeed.min.js"></script>
+	<script src="{{relativedir}}/js/jquery.prettyPhoto.js"></script>
+	<script src="{{relativedir}}/js/jquery.isotope.min.js"></script>
+	<script src="{{relativedir}}/js/jquery.fitvids.js"></script>
+	<script src="{{relativedir}}/js/colpick.js"></script>
+    <script src="{{relativedir}}/js/jquery.elastislide.js"></script>
+	<script src="{{relativedir}}/js/jquery.mlens-1.3.min.js"></script>
+	<script src="{{relativedir}}/js/main.js"></script>
+    {% endblock jsscripts %}
+    </body>
+</html>
