@@ -12,6 +12,7 @@ import argparse
 from gspreaddatafetcher import *
 from categoryrender import *
 from productrender import *
+from generateimages import *
 
 def mkdir_p(path):
     try:
@@ -79,10 +80,11 @@ for productInfo in productInfos:
 			images = product['productImgUrl'].strip().split('\n')
 			productImgForCategoryPage = [{'std_img':img, 'zoom_img':img} for img in images]
 			product['imageUrls'] = productImgForCategoryPage
-		else:
+		elif 'imageUrls' in product:
 			productImgForCategoryPage = product['imageUrls'][:2]
-		product['productImg1Url'] = productImgForCategoryPage[0]['std_img']
-		product['productImg2Url'] = productImgForCategoryPage[0]['std_img']
+		if len(productImgForCategoryPage) > 0:
+			product['productImg1Url'] = productImgForCategoryPage[0]['std_img']
+			product['productImg2Url'] = productImgForCategoryPage[0]['std_img']
 		if len(productImgForCategoryPage) > 1:
 			product['productImg2Url'] = productImgForCategoryPage[1]['std_img']
 		product = dict((k,v) for k, v in product.iteritems() if str(v).strip() != "")
@@ -95,4 +97,9 @@ renderCategory(category.__dict__, rootDir, os.path.join(os.path.abspath(argument
 for product in category.products:
 	categoryDictionary = category.__dict__
 	dictionary = dict(product.items() + {"category": category.category, "subCategory": category.subCategory,"title":category.title}.items())
-	renderProduct(dictionary, rootDir, os.path.join(outputdir, product['productCode'] + ".html"))
+	try:
+		generateimages(dictionary, arguments.destination_dir)
+		renderProduct(dictionary, rootDir, os.path.join(outputdir, product['productCode'] + ".html"))
+	except:
+		print "Error Processing Product:" + str(product)
+		raise

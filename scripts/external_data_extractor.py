@@ -30,7 +30,7 @@ def extract_data_from_jabong(soup):
 	productName = soup.find("span", {"id" : "qa-title-product"}).string.strip()
 	price = soup.find("span", {"itemprop" : "price"}).string.strip()
 	disc_price_node = soup.find("div", {"id" : "pdp-voucher-price"})
-	if disc_price_node is not None:
+	if disc_price_node is not None and len(disc_price_node.string.strip()) > 0:
 		mrp = price
 		price = disc_price_node.string.replace("Rs.", "").strip()
 	return {"imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}

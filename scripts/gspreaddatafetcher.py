@@ -12,13 +12,10 @@ def isCurrent(x):
 	return x['current'].lower() == "true"
 
 def compare(item1, item2):
-	print "item1" + item1['new']
-	print "item2" + item2['new']
 	return (item1['new'] < item2['new'])
 
 def getDictionary(data):
 	data = unicode(data, "utf-8")
-	print data
 	decoder = json.JSONDecoder(object_pairs_hook=collections.OrderedDict)
 	return decoder.decode(data)
 
@@ -37,15 +34,17 @@ def fetchCategoryAndProductInfo(url, productSheetName):
 	products = [productRow(header,x) for x in productSheet_data_lists[9:]]
 	products = filter(isCurrent, products)
 	for product in products:
-		product['description'] = [line.strip() for line in product['description'].strip().split('\n')]
-		if product['sizes'] is not "":
-			product['sizes'] = [getDictionary(x.rstrip()) for x in product['sizes'].split("\n")]
-			product['sizeheaders'] = product['sizes'][0].keys()
-			print product['sizes']
-			print product['sizeheaders']
-		if product['colors'] is not "":
-			colorsData = product['colors'].split("\n")
-			product['colors'] = [getDictionary(x.rstrip()) for x in product['colors'].split("\n")]
+		try:
+			product['description'] = [line.strip() for line in product['description'].strip().split('\n')]
+			if product['sizes'] is not "":
+				product['sizes'] = [getDictionary(x.rstrip()) for x in product['sizes'].rstrip().split("\n")]
+				product['sizeheaders'] = product['sizes'][0].keys()
+			if product['colors'] is not "":
+				colorsData = product['colors'].split("\n")
+				product['colors'] = [getDictionary(x.rstrip()) for x in product['colors'].split("\n")]
+		except:
+			print "Error during processing:" + str(product);
+			raise
 	products.sort(key= lambda item : item['new'], reverse=True)
 	return (c, products)
 
