@@ -1380,10 +1380,36 @@ parent's font-size:0
 	cursor:default;
 }
 
+.scroll {
+	width: 42px; 
+	height: 42px; 
+	background: url(../images/down-arrow.png) no-repeat;
+}
+
+.scroll:hover {
+	width: 42px; 
+	height: 42px; 
+	background: url(../images/down-arrow-hover.png) no-repeat;
+}
+
+
 section #about {
     background: none repeat scroll 0% 0% padding-box #7F6D6F;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+section .first {
+/*	background: none repeat scroll 0% 0% padding-box #CBC3C4;
+*/	/*background: url(../images/homeslider/slide2.jpg);
+	background-size: repeat;*/
+}
+
+section .second {
+	background: none repeat scroll 0% 0% padding-box #CBC3C4;
+
+/*	background: url(../images/homeslider/slide3.jpg) no-repeat;
+	background-size: cover;	
+*/}
 
 #aboutme_title:after {
     content: "";
@@ -1392,7 +1418,18 @@ section #about {
     height: 5px;
     width: 200px;
     background: none repeat scroll 0% 0% padding-box #FF7579;
-#    border-radius: 2.5px;
+    border-radius: 2.5px;
+}
+
+.chevron {
+    background-image: url("../img/external/ui/chevron.png");
+    height: 47px;
+    width: 47px;
+    position: absolute;
+    z-index: 500;
+    bottom: -22px;
+    left: 50%;
+    margin-left: -26px;
 }
 
 section #about {
@@ -1401,6 +1438,14 @@ section #about {
 
 section #about h1 {
     color: #FFF;
+}
+
+.body-shape {
+	padding: 20px;
+}
+
+.body-shape-info {
+	margin-top: 70px;
 }
 
 #products-tabs-content {

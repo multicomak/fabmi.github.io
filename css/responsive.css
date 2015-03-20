@@ -653,8 +653,8 @@
 	}
 	
 	#category-header .category-title p {
-		display:none;
-	}
+/*		display:none;
+*/	}
 	
 	#category-header .slider-banner-description .category-title p {
 		display:block;
