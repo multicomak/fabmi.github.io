@@ -76,8 +76,8 @@ for productInfo in productInfos:
 			print "Out ot Stock" + product['productUrl']
 			continue
 		productImgForCategoryPage = []
-		if 'productImgUrl' in product and product['productImgUrl'].strip() != '':
-			images = product['productImgUrl'].strip().split('\n')
+		if 'productImgUrl' in product:
+			images = product['productImgUrl']
 			productImgForCategoryPage = [{'std_img':img, 'zoom_img':img} for img in images]
 			product['imageUrls'] = productImgForCategoryPage
 		elif 'imageUrls' in product:
@@ -90,7 +90,7 @@ for productInfo in productInfos:
 		product = dict((k,v) for k, v in product.iteritems() if str(v).strip() != "")
 		category.add_Product(product)
 	except:
-		print "Error Processing Product" + str(product)
+		print "Error Processing Product" + str(productInfo)
 		print "Unexpected error:", sys.exc_info()[0] 
 		raise
 renderCategory(category.__dict__, rootDir, os.path.join(os.path.abspath(arguments.destination_dir), arguments.category, arguments.sub_category + ".html"))

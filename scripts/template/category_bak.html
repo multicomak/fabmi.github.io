@@ -1,88 +1,88 @@
 {% extends "base.html" %}
 {% block title %}FABMI- {{title|e}} {% endblock title%}
 {% block content %}
-        	<div id="category-header">
-        		<div class="row">
-        			<div class="container">
-						<div class="col-2">
-							<div class="category-image">
-								<img src="{{relativedir}}/{{categoryImgUrl}}" alt="{{categoryName}}" class="img-responsive">
-							</div><!-- End .category-image -->
-							
-						</div><!-- End .col-2 -->
-						
-						<div class="col-2 last">
-							<div class="category-title">
-								<h2 class="text-capitalize">{{category}} - {{title}}</h2>
+            <div id="category-header">
+                <div class="row">
+                    <div class="container">
+                        <div class="col-2">
+                            <div class="category-image">
+                                <img src="{{relativedir}}/{{categoryImgUrl}}" alt="{{categoryName}}" class="img-responsive">
+                            </div><!-- End .category-image -->
+                            
+                        </div><!-- End .col-2 -->
+                        
+                        <div class="col-2 last">
+                            <div class="category-title">
+                                <h2 class="text-capitalize">{{category}} - {{title}}</h2>
                                 {% for element in categoryDesc %}
-								<p>{{element}}</p>
+                                <p>{{element}}</p>
                                 {% endfor %}
-							</div><!-- End .category-title -->
-						</div><!-- End .col-2 -->
-    			</div><!-- End .container -->
-        		</div><!-- End .row -->
-        	</div><!-- End #category-header -->
-        	<div id="category-breadcrumb">
-        		<div class="container">
-					<ul class="breadcrumb">
-						<li><a href="/index.html">Home</a></li>
+                            </div><!-- End .category-title -->
+                        </div><!-- End .col-2 -->
+                </div><!-- End .container -->
+                </div><!-- End .row -->
+            </div><!-- End #category-header -->
+            <div id="category-breadcrumb">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="/index.html">Home</a></li>
                         <li><a href="{{category|lower}}.html">{{category}}</a></li>
                         <li class="active"><a href="{{subCategory}}.html">{{title}}</a></li>
-					</ul>
-        		</div>
-        	</div>
-        	<div class="container">
-        		<div class="row">
-        			<div class="col-md-12">
-        				
-        				<div class="row">
-        					
-        					<div class="col-md-12 col-sm-12 col-xs-12 main-content">
-        						<div class="sm-margin"></div><!-- .space -->
-        						<div class="category-item-container">
-        						<div class="row">
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <div class="row">
+                            
+                            <div class="col-md-12 col-sm-12 col-xs-12 main-content">
+                                <div class="sm-margin"></div><!-- .space -->
+                                <div class="category-item-container">
+                                <div class="row">
                                     {% for product in products %}
-        							<div class="col-md-3 col-sm-6 col-xs-12">
-        								<div class="item">
-        									<div class="item-image-container">
-    											<figure>
-    												<a href="{{subCategory}}/{{product.productCode}}.html">
-    													<img src="{{product.productImg1Url}}" alt="item1" class="item-image center-block">
+                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <div class="item">
+                                            <div class="item-image-container">
+                                                <figure>
+                                                    <a href="{{subCategory}}/{{product.productCode}}.html">
+                                                        <img src="{{product.productImg1Url}}" alt="item1" class="item-image center-block">
                                                        {% if product.productImg2Url is not none %}
-    													<img src="{{product.productImg2Url}}" alt="item1  Hover" class="item-image-hover center-block">
+                                                        <img src="{{product.productImg2Url}}" alt="item1  Hover" class="item-image-hover center-block">
                                                         {% endif %}
-    												</a>
-    											</figure>
-        										<div class="item-price-container">
+                                                    </a>
+                                                </figure>
+                                                <div class="item-price-container">
                                                    {% if product.mrp %}
                                                     <span class="old-price"><span class="WebRupee">&#x20B9;</span>{{product.mrp}}</span>
                                                     {% endif %}
                                                     <span class="item-price"><span class="WebRupee">&#x20B9;</span>{{product.price}}</span>
-												</div>
+                                                </div>
                                                 {% if product.new|lower == 'true' %}
-												<span class="new-rect">New</span>
+                                                <span class="new-rect">New</span>
                                                 {% endif%}
                                                 {% if product.discount %}
-												<span class="discount-rect">{{product.discount}}%</span>
+                                                <span class="discount-rect">{{product.discount}}%</span>
                                                 {% endif%}
-        									</div><!-- End .item-image -->
-        									<div class="item-meta-container">
-        										<h3 class="item-name"><a class="text-capitalize" href="{{productUrl}}"><span class="text-capitalize">{{product.productName}}</span></a></h3>
-        									</div><!-- End .item-meta-container -->	
-        								</div><!-- End .item -->
-        							</div><!-- End .col-md-3 -->
+                                            </div><!-- End .item-image -->
+                                            <div class="item-meta-container">
+                                                <h3 class="item-name"><a class="text-capitalize" href="{{productUrl}}"><span class="text-capitalize">{{product.productName}}</span></a></h3>
+                                            </div><!-- End .item-meta-container --> 
+                                        </div><!-- End .item -->
+                                    </div><!-- End .col-md-3 -->
                                     {% endfor %}
-        						</div><!-- End .row -->
-        						</div><!-- End .category-item-container -->
-        						
-        					</div><!-- End .col-md-9 -->
-        					
-        				</div><!-- End .row -->
-        				
-        				
-        			</div><!-- End .col-md-12 -->
-        		</div><!-- End .row -->
-			</div><!-- End .container -->
+                                </div><!-- End .row -->
+                                </div><!-- End .category-item-container -->
+                                
+                            </div><!-- End .col-md-9 -->
+                            
+                        </div><!-- End .row -->
+                        
+                        
+                    </div><!-- End .col-md-12 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
         
 {% endblock content %}
             {% block footer %}

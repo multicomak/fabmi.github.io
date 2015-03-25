@@ -1394,22 +1394,36 @@ parent's font-size:0
 
 
 section #about {
-    background: none repeat scroll 0% 0% padding-box #7F6D6F;
+/*    background: none repeat scroll 0% 0% padding-box #7F6D6F;
+*/
+	background: url(../images/bg-dark.jpg);
+	background-size: repeat;
+
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 section .first {
-/*	background: none repeat scroll 0% 0% padding-box #CBC3C4;
-*/	/*background: url(../images/homeslider/slide2.jpg);
+	background: none repeat scroll 0% 0% padding-box #FFFFFF;
+	color: #333;
+	padding: 60px 0px;
+	/*background: url(../images/retina_wood.png);
 	background-size: repeat;*/
 }
 
 section .second {
-	background: none repeat scroll 0% 0% padding-box #CBC3C4;
+	background: none repeat scroll 0% 0% padding-box #DEDAE0;
+	color: #FFF;
+	padding: 60px 0px;
+/*	background: url(../images/wood_1.png);
+	background-size: repeat;*/
 
 /*	background: url(../images/homeslider/slide3.jpg) no-repeat;
 	background-size: cover;	
 */}
+
+section .second h3 {
+	color: #FFF;	
+}
 
 #aboutme_title:after {
     content: "";
@@ -2457,6 +2471,12 @@ select.input-lg {
 	border-top:1px solid #e4e2e2;
 	border-bottom:1px solid #e4e2e2;
 	overflow:hidden;
+}
+
+#category-header ul {
+	list-style-type: initial;
+	padding: inherit;
+	margin: inherit;
 }
 
 #category-header.category-banner {

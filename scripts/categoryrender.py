@@ -14,12 +14,13 @@ class ProductInfo(object):
 		self.discount = discount
 
 class Category(object):
-	def __init__(self, title, category, subCategory, categoryImgUrl, categoryDesc):
+	def __init__(self, title, category, subCategory, categoryImgUrl, dos, donts):
 		self.title = title
 		self.category = category
 		self.subCategory = subCategory
 		self.categoryImgUrl = categoryImgUrl
-		self.categoryDesc = categoryDesc		
+		self.dos = dos
+		self.donts = donts		
 		self.breadCrumbs = []
 		self.products = []
 	

@@ -4,22 +4,40 @@
         	<div id="category-header">
         		<div class="row">
         			<div class="container">
-						<div class="col-2">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
 							<div class="category-image">
 								<img src="{{relativedir}}/{{categoryImgUrl}}" alt="{{categoryName}}" class="img-responsive">
 							</div><!-- End .category-image -->
-							
-						</div><!-- End .col-2 -->
+						</div><!-- col-md-5 col-sm-5 col-xs-12 -->
 						
-						<div class="col-2 last">
+						<div class="col-md-7 col-sm-7 col-xs-12">
 							<div class="category-title">
-								<h2 class="text-capitalize">{{category}} - {{title}}</h2>
-                                {% for element in categoryDesc %}
-								<p>{{element}}</p>
-                                {% endfor %}
-							</div><!-- End .category-title -->
-						</div><!-- End .col-2 -->
-    			</div><!-- End .container -->
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h2 class="text-capitalize">{{category}} - {{title}}</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <h4>DO'S:</h4>
+                                        <ul>
+                                            {% for do in dos %}
+                                            <li>{{do}}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <h4>DONT'S:</h4>
+                                        <ul>
+                                            {% for dont in donts %}
+                                            <li>{{dont}}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- category-title -->
+ 						</div><!-- End col-md-7 col-sm-7 col-xs-12 -->
+        			</div><!-- End .container -->
         		</div><!-- End .row -->
         	</div><!-- End #category-header -->
         	<div id="category-breadcrumb">

@@ -1,6 +1,8 @@
 import argparse
 import os
 import subprocess
+from os import listdir
+from os.path import isfile, join
 
 def scaleimage(imageurl, outputfile, pad):
 	scaleType = ''
@@ -22,6 +24,11 @@ def generateimages(product, rootdir):
 		print directory
 		if os.path.exists(directory) is False:
 			os.makedirs(directory)
+		onlyfiles = [  os.path.basename(f) for f in listdir(directory) if isfile(join(directory,f))]
+		productimages = [os.path.basename(f) for f in product['productImgUrl']]
+		if set(onlyfiles).issuperset(productimages):
+			print "Product Images already exists hence not generating images: " + str(product['productCode'])
+			return
 		if 'productImgOriginUrl' in product:
 			producturls = product['productImgOriginUrl'].rstrip().split('\n')
 			for idx, producturl in enumerate(producturls):

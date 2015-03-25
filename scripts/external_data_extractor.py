@@ -46,6 +46,8 @@ def extract_data_from_flipkart(soup):
 		std_img = img.attrs['data-src'].strip()
 		zoom_img = img.attrs['data-zoomimage'].strip()
 		image_url.append({"std_img":std_img,"zoom_img":zoom_img})
+	if soup.find("meta", {"itemprop" : "price"}) is None:
+		print soup
 	price = soup.find("meta", {"itemprop" : "price"}).attrs['content'].strip()
 	productCode = soup.find("input", class_ = "btn-buy-now btn-big  current").attrs['data-pid']
 	return {"imageUrls": image_url, "price": price, "productCode":productCode}

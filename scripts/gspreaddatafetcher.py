@@ -27,15 +27,18 @@ def fetchCategoryAndProductInfo(url, productSheetName):
 	overview_data_lists = overview.get_all_values()
 	productSheet_data_lists = productSheet.get_all_values()
 	data = {t[0]:t[1] for t in productSheet_data_lists[:8]}
-	data['categoryDesc'] = [line.strip() for line in data['categoryDesc'].split('\n')]
+	# data['categoryDesc'] = [line.strip() for line in data['categoryDesc'].split('\n')]
+	data['dos'] = [line.strip() for line in data['dos'].rstrip().split('\n')]
+	data['donts'] = [line.strip() for line in data['donts'].rstrip().split('\n')]	
 	#c = Category(data("title"), data("categoryName"), data("categoryImgUrl"), data("categoryDesc"))
-	c = Category(data['title'], data['category'], data['subCategory'], data['categoryImgUrl'], data['categoryDesc'])
+	c = Category(data['title'], data['category'], data['subCategory'], data['categoryImgUrl'], data['dos'], data['donts'])
 	header = productSheet_data_lists[8]
 	products = [productRow(header,x) for x in productSheet_data_lists[9:]]
 	products = filter(isCurrent, products)
 	for product in products:
 		try:
-			product['description'] = [line.strip() for line in product['description'].strip().split('\n')]
+			product['description'] = [line.strip() for line in product['description'].rstrip().split('\n')]
+			product['productImgUrl'] = [line.strip() for line in product['productImgUrl'].rstrip().split('\n')]
 			if product['sizes'] is not "":
 				product['sizes'] = [getDictionary(x.rstrip()) for x in product['sizes'].rstrip().split("\n")]
 				product['sizeheaders'] = product['sizes'][0].keys()
