@@ -47,7 +47,7 @@ outputdir = os.path.join(os.path.abspath(arguments.destination_dir), arguments.c
 mkdir_p(outputdir)
 
 for productInfo in productInfos:
-	print "Fetching info for" + productInfo['productUrl']
+	print "Fetching info for:" + productInfo['productUrl']
 	r = requests_session.get(productInfo['productUrl'])
 	soup = BeautifulSoup(r.content)
 	# if "flipkart" in site_url:
@@ -76,7 +76,7 @@ for productInfo in productInfos:
 			print "Out ot Stock" + product['productUrl']
 			continue
 		productImgForCategoryPage = []
-		if 'productImgUrl' in product:
+		if 'productImgUrl' in product and len(product['productImgUrl']) > 0:
 			images = product['productImgUrl']
 			productImgForCategoryPage = [{'std_img':img, 'zoom_img':img} for img in images]
 			product['imageUrls'] = productImgForCategoryPage

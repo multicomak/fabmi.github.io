@@ -38,7 +38,8 @@ def fetchCategoryAndProductInfo(url, productSheetName):
 	for product in products:
 		try:
 			product['description'] = [line.strip() for line in product['description'].rstrip().split('\n')]
-			product['productImgUrl'] = [line.strip() for line in product['productImgUrl'].rstrip().split('\n')]
+			if product['productImgUrl'].rstrip() is not '':			
+				product['productImgUrl'] = [line.strip() for line in product['productImgUrl'].rstrip().split('\n')]
 			if product['sizes'] is not "":
 				product['sizes'] = [getDictionary(x.rstrip()) for x in product['sizes'].rstrip().split("\n")]
 				product['sizeheaders'] = product['sizes'][0].keys()
