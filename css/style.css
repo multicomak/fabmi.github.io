@@ -2563,8 +2563,8 @@ select.input-lg {
 }
 
 #category-header .category-title {
-	padding-top:60px;
-}
+/*	padding-top:60px;
+*/}
 
 #category-header.category-banner .category-title  {
 	position: absolute;
