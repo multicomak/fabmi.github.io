@@ -13,6 +13,8 @@ from gspreaddatafetcher import *
 from categoryrender import *
 from productrender import *
 from generateimages import *
+from termcolor import colored
+
 
 def mkdir_p(path):
     try:
@@ -34,8 +36,11 @@ parser.add_argument('-d', action='store', dest='destination_dir',
                     help='Destination Directory Name', required=True)
 parser.add_argument('-s', action='store', dest='staging_dir',
                     help='Staging Dir')
+parser.add_argument('-idx', action='store', dest='only_index',
+                    help='Process only these indices')
 parser.add_argument('--test', dest='isTest', action='store_true', default=False)
 arguments = parser.parse_args()
+failedProducts = []
 rootDir = ""
 if arguments.isTest is True:
 	print "RUNNING in Test mode"
@@ -45,7 +50,9 @@ spreadsheet_url = arguments.input_file_url
 (category, productInfos) = fetchCategoryAndProductInfo(spreadsheet_url, arguments.sub_category)
 outputdir = os.path.join(os.path.abspath(arguments.destination_dir), arguments.category, arguments.sub_category)
 mkdir_p(outputdir)
-
+if arguments.only_index:
+	print "Processing only indices " + arguments.only_index
+	productInfos = [productInfos[int(index)] for index in arguments.only_index.split(",")]
 for productInfo in productInfos:
 	print "Fetching info for:" + productInfo['productUrl']
 	r = requests_session.get(productInfo['productUrl'])
@@ -71,9 +78,12 @@ for productInfo in productInfos:
 			p  = extract_data_from_amazon(soup)
 	 	else:
 	 		p = {}
+		if 'fabmiOwned' in productInfo and productInfo['fabmiOwned'] is not '':
+			if productInfo['productImgUrl'] is "" and  productInfo['productImgOriginUrl'] is not "":
+				setImageUrlsForFabmiOwnedProducts(productInfo, os.path.join(os.sep, 'images', category.category.lower(), category.subCategory, productInfo['productCode']), len(productInfo['productImgOriginUrl']))
 		product = dict(productInfo.items() + p.items())
 		if 'outOfStock'  in product:
-			print "Out ot Stock" + product['productUrl']
+			print colored("Out ot Stock" + product['productUrl'], "yellow")
 			continue
 		productImgForCategoryPage = []
 		if 'productImgUrl' in product and len(product['productImgUrl']) > 0:
@@ -91,15 +101,19 @@ for productInfo in productInfos:
 		category.add_Product(product)
 	except:
 		print "Error Processing Product" + str(productInfo)
-		print "Unexpected error:", sys.exc_info()[0] 
-		raise
+		print "Unexpected error:", sys.exc_info()
+		failedProducts.append(productInfo['productUrl'])
+
 renderCategory(category.__dict__, rootDir, os.path.join(os.path.abspath(arguments.destination_dir), arguments.category, arguments.sub_category + ".html"))
 for product in category.products:
 	categoryDictionary = category.__dict__
-	dictionary = dict(product.items() + {"category": category.category, "subCategory": category.subCategory,"title":category.title}.items())
+	dictionary = dict(product.items() + {"category": category.category, "categoryName": category.categoryName, "subCategory": category.subCategory,"title":category.title}.items())
 	try:
 		generateimages(dictionary, arguments.destination_dir)
 		renderProduct(dictionary, rootDir, os.path.join(outputdir, product['productCode'] + ".html"))
 	except:
 		print "Error Processing Product:" + str(product)
-		raise
+		print "Unexpected error:", sys.exc_info()
+		failedProducts.append(product['productUrl'])
+if len(failedProducts) > 0:
+	print "Error processing following products :" + str(failedProducts)

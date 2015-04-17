@@ -14,8 +14,9 @@ class ProductInfo(object):
 		self.discount = discount
 
 class Category(object):
-	def __init__(self, title, category, subCategory, categoryImgUrl, dos, donts):
+	def __init__(self, title, category, categoryName, subCategory, categoryImgUrl, dos, donts):
 		self.title = title
+		self.categoryName = categoryName
 		self.category = category
 		self.subCategory = subCategory
 		self.categoryImgUrl = categoryImgUrl

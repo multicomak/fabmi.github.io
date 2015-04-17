@@ -6,6 +6,7 @@ import re
 from filehelper import *
 from shared import *
 from productrender import *
+from termcolor import colored
 
 requests_session = requests.Session()
 
@@ -25,14 +26,29 @@ def extract_data_from_jabong(soup):
 			elif li.img.has_attr('data-src-onload'):
 				std_img = li.img.attrs['data-src-onload'].strip()
 			image_url.append({"std_img":std_img,"zoom_img":std_img})
-
+	if 	soup.find("td", {"id" : "qa-sku"}) is None or soup.find("td", {"id" : "qa-sku"}).string is None:
+		print "Jabong Product Code HTML Element not in expected format"
 	productCode = soup.find("td", {"id" : "qa-sku"}).string.strip()
-	productName = soup.find("span", {"id" : "qa-title-product"}).string.strip()
-	price = soup.find("span", {"itemprop" : "price"}).string.strip()
+	if 	soup.find("span", {"id" : "qa-title-product"}) is None:
+		print "Jabong Product Name HTML Element not in expected format"
+	productSpan = soup.find("span", {"id" : "qa-title-product"})
+	if productSpan.string is None:
+		productSpan = productSpan.find("span", {"itemprop" : "name"})
+	productName = productSpan.string.strip()
+	priceDiv = soup.find("div", {"id" : "product_price"})
+	if priceDiv is None:
+		priceDiv = soup.find("span", {"itemprop" : "price"})
+	if 	priceDiv is None or priceDiv.string is None:
+		print colored("Jabong Price HTML Element not in expected format", "red")
+	price = priceDiv.string.strip()
 	disc_price_node = soup.find("div", {"id" : "pdp-voucher-price"})
+	if disc_price_node is not None and disc_price_node.string is None:
+		disc_price_node = soup.find("span", {"itemprop" : "price"})
+	if disc_price_node is not None and disc_price_node.string is None:
+		print colored("Jabong Discount Price HTML Element not in expected format", "red")
 	if disc_price_node is not None and len(disc_price_node.string.strip()) > 0:
 		mrp = price
-		price = disc_price_node.string.replace("Rs.", "").strip()
+		price = disc_price_node.string.strip()
 	return {"imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}
 
 def extract_data_from_flipkart(soup):
@@ -44,10 +60,12 @@ def extract_data_from_flipkart(soup):
 		return	{"outOfStock": True}
 	for img in images:
 		std_img = img.attrs['data-src'].strip()
-		zoom_img = img.attrs['data-zoomimage'].strip()
+		zoom_img = std_img
+		if img.has_attr('data-zoomimage'):
+			zoom_img = img.attrs['data-zoomimage'].strip()
 		image_url.append({"std_img":std_img,"zoom_img":zoom_img})
-	if soup.find("meta", {"itemprop" : "price"}) is None:
-		print soup
+	# if soup.find("meta", {"itemprop" : "price"}) is None:
+	# 	print soup
 	price = soup.find("meta", {"itemprop" : "price"}).attrs['content'].strip()
 	productCode = soup.find("input", class_ = "btn-buy-now btn-big  current").attrs['data-pid']
 	return {"imageUrls": image_url, "price": price, "productCode":productCode}

@@ -14,9 +14,10 @@
 							<div class="category-title">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h2 class="text-capitalize">{{category}} - {{title}}</h2>
+                                        <h2 class="text-capitalize">{{categoryName}} - {{title}}</h2>
                                     </div>
                                 </div>
+                                {% if dos|length > 1 %}                             
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <h4>DO'S:</h4>
@@ -35,6 +36,7 @@
                                         </ul>
                                     </div>
                                 </div>
+                                {% endif %}
                             </div><!-- category-title -->
  						</div><!-- End col-md-7 col-sm-7 col-xs-12 -->
         			</div><!-- End .container -->
@@ -44,7 +46,7 @@
         		<div class="container">
 					<ul class="breadcrumb">
 						<li><a href="/index.html">Home</a></li>
-                        <li><a href="{{category|lower}}.html">{{category}}</a></li>
+                        <li><a href="{{category|lower}}.html">{{categoryName}}</a></li>
                         <li class="active"><a href="{{subCategory}}.html">{{title}}</a></li>
 					</ul>
         		</div>
