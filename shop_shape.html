@@ -148,49 +148,15 @@
         </header><!-- End #header -->
 
         <section id="content">
-        	
-        	<div id="slider-rev-container">
-                <div id="slider-rev">
-                    <ul>
-                        <li data-transition="curtain-1" data-slotamount="15" data-masterspeed="400">
-                        <div class="tp-caption rev-title skewfromleft stt" data-x="600" data-y="200" data-speed="800" data-start="900" data-easing="Power3.easeIn" data-endspeed="300">
-                            <p class="brand-color">Learn your Shape</p>
-                            <p class="brand-color">Dress Accordingly</p>
-                            <p class="brand-color">LOOK FAB!</p>
-                        </div>
-                        
-                        <div class="tp-caption sfb stb" data-x="600" data-y="400" data-speed="1200" data-start="1800" data-easing="Power3.easeIn" data-endspeed="300">
-                            <div class="row">
-                            <div class="col-sm-5">
-                                <a href="#aboutus" data-scroll class="btn btn-custom-2">Scroll to Learn More
-                                <i class="fa fa-arrow-down"></i>
-                                </a>
-                            </div>
-
-                            </div>
-                        </div>
-                        <div class="tp-caption lfb ltb" data-x="200" data-y="10" data-speed="1200" data-start="600" data-easing="Expo.easeOut" data-endspeed="800">
-                            <a href="#"><img src="images/homeslider/girl3.png" alt="bag1"></a>
-                        </div>
-                        </li>
+            <div id="category-breadcrumb" style="margin-bottom:0px">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a>Shop By Shape</a></li>
                     </ul>
-                </div><!-- End #slider-rev -->
-            </div><!-- End #slider-rev-container -->
-            <section id="about">
-                <a id="aboutus"></a>
-                <div class="md-margin2x"></div><!-- Space -->
-                <div class="md-margin2x"></div><!-- Space -->                
-                <div class="container text-center">
-                    <h1 id="aboutme_title" class="md-margin">WHAT WE DO</h1>
-                    <div class="md-margin"></div><!-- Space -->
-                    <div>
-                        <p>Sometimes shoppers need a little help. Rather than searching through an endless supply of products, you may prefer a selection thereby <b>simplifying shopping and saving time</b>.</p>
-                        <p>FabMi provides a <b><i>personal stylist</i></b> experience by curating major trends in apparels and more, showing you what works for your <b>Body Shape</b>. FabMi  helps  you discover what is right for your unique body and what you need in your wardrobe to make you look and feel great every day.</p>
-                        <p>FabMi also provides free style advice for your body type &amp; budget.</p>
-                    </div>
                 </div>
-                <div class="md-margin2x"></div><!-- Space -->
-            </section>
+            </div>        
+            <div class="md-margin2x"></div><!-- Space -->
             <section class="shape ">
                 <div class="container stickyFilter">
                     <div class="shop-shape-section divider">
@@ -297,39 +263,21 @@
                             </div>
                         </div>
                     </section>
-            </div>
+                    <div class="md-margin2x"></div><!-- Space -->
+                </div>
             </section>
         </section><!-- End #content -->
         
         <footer id="footer">
-            <div id="inner-footer">
+            
                 
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="clearfix visible-sm"></div>
-                        
-                        <div class="col-sm-12 col-xs-12 widget">
-                            <h3>FACEBOOK LIKE BOX</h3>
-                            
-                            <div class="facebook-likebox">
-                                <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Ffabmi.in&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"></iframe>
-                            </div>
-                            
-                            
-                        </div><!-- End .widget -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
-            
-            </div><!-- End #inner-footer -->
-            
+            <hr>
             <div id="footer-bottom">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 col-sm-7 col-xs-12 footer-social-links-container">
                             <ul class="social-links clearfix">
                                 <li><a href="http://facebook.com/fabmi.in" class="social-icon icon-facebook" target="_blank"></a></li>
-                                <li><a href="https://twitter.com/fab_mi" class="social-icon icon-twitter"></a></li>
                                 <li><a href="mailto:someone@example.com?Subject=Hello%20again" class="social-icon icon-email"></a></li>
                             </ul>
                         </div><!-- End .col-md-7 -->
@@ -341,6 +289,7 @@
                 </div><!-- End .container -->
             </div><!-- End #footer-bottom -->
             
+             
         </footer><!-- End #footer -->
     </div><!-- End #wrapper -->
         <a href="#" id="scroll-top" title="Scroll to Top"><i class="fa fa-angle-up"></i></a><!-- End #scroll-top -->
@@ -360,44 +309,5 @@
     <script src="js/colpick.js"></script>
     <script src="js/main.js"></script>
 	
-    <script>
-    	$(function() {
-            // Slider Revolution
-            jQuery('#slider-rev').revolution({
-                delay:8000,
-                startwidth:1170,
-                startheight:550,
-                onHoverStop:"true",
-                hideThumbs:250,
-                navigationHAlign:"center",
-                navigationVAlign:"bottom",
-                navigationHOffset:0,
-                navigationVOffset:12,
-                soloArrowLeftHalign:"left",
-                soloArrowLeftValign:"center",
-                soloArrowLeftHOffset:0,
-                soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right",
-                soloArrowRightValign:"center",
-                soloArrowRightHOffset:0,
-                soloArrowRightVOffset:0,
-                touchenabled:"on",
-                stopAtSlide:-1,
-                stopAfterLoops:-1,
-                dottedOverlay:"none",
-                fullWidth:"on",
-                shadow:0
-         
-              });
-        });
-            smoothScroll.init({
-                speed: 1000,
-                easing: 'easeInOutCubic',
-                offset: 0,
-                updateURL: true,
-                callbackBefore: function ( toggle, anchor ) {},
-                callbackAfter: function ( toggle, anchor ) {}
-            });        
-    </script>
     </body>
 </html>
