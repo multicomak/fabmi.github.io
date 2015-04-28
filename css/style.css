@@ -6273,8 +6273,7 @@ html[xmlns] .slides {display: block;}
 
 .divider {
     border-top: 1px solid #C0C0C0;
-    margin-top: 6rem;
-    margin-bottom: 0px;
+	margin: 50px 10px 0px;
     text-align: center;
 }
 
@@ -6289,7 +6288,7 @@ html[xmlns] .slides {display: block;}
     background-color: #FFF;
 }
 
-.stickyFilter {
+.stickyfilter {
     box-shadow: 0px 0px 3px 1px #CCC;
     border-width: 1px 1px 0px;
     border-style: solid solid none;
@@ -6299,4 +6298,20 @@ html[xmlns] .slides {display: block;}
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     border-image: none;
+    background-color: #FFFFFF;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.shopbyaction {
+	padding: 10px;
+	margin: 10px;
+}
+
+.doodle {
+	background-image: url('../images/doodle.jpg');
+	background-repeat: repeat;
+
 }
