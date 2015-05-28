@@ -1,9 +1,10 @@
+import sys, os, errno
 import gspread
 import collections
 import json
 from productrender import *
 from categoryrender import *
-
+from oauth2client.client import SignedJwtAssertionCredentials
 
 def productRow(header, row):
 	return dict(zip(header, row))
@@ -20,7 +21,11 @@ def getDictionary(data):
 	return decoder.decode(data)
 
 def fetchCategoryAndProductInfo(url, productSheetName):
-	gc = gspread.login('connect.fabmi@gmail.com', 'advikdarsh')
+	json_key = json.load(open('FABMI-42acf5218e38.json'))
+	scope = ['https://spreadsheets.google.com/feeds']	
+	# gc = gspread.login('connect.fabmi@gmail.com', 'advikdarsh')
+	credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)
+	gc = gspread.authorize(credentials)
 	sheet = gc.open_by_url(url)
 	overview = sheet.worksheet("overview")
 	productSheet = sheet.worksheet(productSheetName)
@@ -45,13 +50,14 @@ def fetchCategoryAndProductInfo(url, productSheetName):
 				product['productImgUrl'] = [line.strip() for line in product['productImgUrl'].strip().split('\n')]
 			if product['productImgOriginUrl'].strip() is not '':			
 				product['productImgOriginUrl'] = [line.strip() for line in product['productImgOriginUrl'].strip().split('\n')]
-			if product['sizes'] is not "":
+			if product['sizes'].strip() is not "":
 				product['sizes'] = [getDictionary(x.strip()) for x in product['sizes'].strip().split("\n")]
 				product['sizeheaders'] = product['sizes'][0].keys()
 			if product['colors'] is not "":
 				# colorsData = product['colors'].rstrip().split("\n")
 				product['colors'] = [getDictionary(x.strip()) for x in product['colors'].strip().split("\n")]
 		except:
+			print "product:" + str(product)
 			print "Unexpected error:", sys.exc_info()
 			raise
 	products.sort(key= lambda item : item['new'], reverse=True)

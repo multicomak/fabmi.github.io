@@ -6315,3 +6315,8 @@ html[xmlns] .slides {display: block;}
 	background-repeat: repeat;
 
 }
+
+.product-list li a {
+	color: #777;
+    text-decoration: underline;	
+}

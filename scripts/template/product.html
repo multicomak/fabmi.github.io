@@ -54,6 +54,10 @@
                                 {% if brand %}
                                     <li><span>Brand:</span>{{brand}}</li>
                                 {% endif %}
+                                {% if fabmiOwned %}
+                                    <li id="COD"><span>Payment:</span><font>Cash on Delivery</font></li>
+                                    <li id="productcode"><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
+                                {% endif %}
                             </ul>
                             <hr>
                             {% if fabmiOwned %}
@@ -65,9 +69,13 @@
                                     <a href="{{ productUrl }}" class="btn btn-custom-2" target="_blank">GET IT</a>
                                 </div><!-- .product-add -->
                             {% endif %}
-                            {% for line in description %}
-                            <p>{{line}}</p>
-                            {% endfor %}
+                            {% if description %}
+                                <div class="well">
+                                {% for line in description %}
+                                <p>{{line}}</p>
+                                {% endfor %}
+                                </div>
+                            {% endif %}
                         </div><!-- End .col-md-6 -->
                             
                         </div><!-- End .row -->
@@ -157,14 +165,8 @@
                                         <div class="col-sm-9">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="orderdeliverytype" id="orderdeliveryoption1" value="10days" checked>
-                                                    <b>10 days</b>
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="orderdeliverytype" id="orderdeliveryoption2" value="21days">
-                                                    <b>21 days</b>
+                                                    <input type="radio" name="orderdeliverytype" id="orderdeliveryoption2" value="3-4 weeks" checked>
+                                                    <b>3-4 weeks</b>
                                                 </label>
                                             </div>
                                         </div>
@@ -261,6 +263,14 @@
             });
 
         });
+        var pubID = '6305CL5937';
+ 
+        $(function(d, t) {
+        var s = document.createElement('script');s.type = 'text/javascript';
+        s.async = true;s.src = (document.location.protocol == 'https:' ? 'https://cdn0.cuelinks.com/js/' : 'http://cdn0.cuelinks.com/js/')  + 'cuelinksv1.js';
+        document.getElementsByTagName('body')[0].appendChild(s);
+        }());
+
     </script>
 
         {% endblock jsscripts %}
