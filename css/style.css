@@ -1402,6 +1402,7 @@ section #about {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+
 section .first {
 	background: none repeat scroll 0% 0% padding-box #FFFFFF;
 	color: #333;
@@ -6305,9 +6306,76 @@ html[xmlns] .slides {display: block;}
     margin-bottom: 20px; 
 }
 
+
+.shopby {
+	background: #FF8B8E none repeat scroll 0% 0%;
+	border-top: 10px solid rgba(0, 0, 0, 0.1);	
+	color: #FFFFFF;
+	min-height: 500px;
+}
+
+.shopby h1 {
+	color: #ffffff;
+}
+
+.shopby2 {
+	color: #737373;
+	border-top: 10px solid rgba(0, 0, 0, 0.1);	
+/*	border:1px solid #FF7579;
+*/	min-height: 500px;	
+}
+
+/*.shopby2 h1 {
+	color: #FF7579;
+}
+*/
 .shopbyaction {
 	padding: 10px;
 	margin: 10px;
+	margin-top: 30px;
+}
+
+.shopby .btn {
+	border:1px solid #FFFFFF;
+	color: white;
+}
+
+#personal_stylist{
+/*	background-color: #FFF0A3;
+*/
+}
+
+#shop {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+
+}
+
+#shop .img-container {
+	margin-bottom: 20px;
+}
+
+.img-container {
+    position: relative;
+
+}
+
+
+
+.img-container .img-footer {
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 5px 10px;   
+
+    width: 100%;
+
+    color: #fff;
+    background: rgba(0,0,0,0.5);   
+}
+
+.img-footer h1 {
+	color: #fff;
 }
 
 .doodle {
@@ -6320,3 +6388,4 @@ html[xmlns] .slides {display: block;}
 	color: #777;
     text-decoration: underline;	
 }
+

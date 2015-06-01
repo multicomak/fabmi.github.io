@@ -484,6 +484,19 @@
 	#footer #newsletter-container form {
 		float:none;
 	}
+
+	.doodle .stickyfilter {
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.doodle .stickyfilter .body-shape-info{
+		padding-left: 20px;
+		padding-right: 20px;
+	}	
+	
 }
  
 /* Landscape phone to portrait tablet */
@@ -967,7 +980,19 @@
 	.no-content .no-content-comment {
 		margin-left:-240px;
 	}
-	
+
+	.doodle .stickyfilter {
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.doodle .stickyfilter .body-shape-info{
+		padding-left: 20px;
+		padding-right: 20px;
+	}	
+
 }
 
  
@@ -1058,6 +1083,7 @@
 		margin-left:-50%;
 		
 	}
+
 
 }
 
