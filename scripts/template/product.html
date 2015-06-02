@@ -46,11 +46,15 @@
                             <div class="lg-margin visible-sm visible-xs"></div><!-- Space -->
                             <h1 class="product-name">{{productName}}</h1>
                             <ul class="product-list">
-                                <li><span>Availability:</span>In Stock</li>
+                                {% if not fabmiOwned %}
+                               <li>
+                                   <span style="display:inline-block">Seller:</span>
+                                   <div class="seller seller-{{seller}}"></div>
+                               </li> 
+                               {% endif %}                                                   
                                 {% if material %}
                                     <li><span>Material:</span>{{material}}</li>
                                 {% endif %}
-                                <li id="productcode"><span>Product Code:</span><font>{{productCode}}</font></li>
                                 {% if brand %}
                                     <li><span>Brand:</span>{{brand}}</li>
                                 {% endif %}
@@ -69,8 +73,38 @@
                                     <a href="{{ productUrl }}" class="btn btn-custom-2" target="_blank">GET IT</a>
                                 </div><!-- .product-add -->
                             {% endif %}
+                            {% if fabmiOwned and sizeheaders %}
+                                    <div>
+                                    <a data-toggle="collapse" href="#sizeMain" aria-expanded="false" aria-controls="sizeMain" style="text-decoration: underline;">
+                                    Size Chart
+                                    </a>
+                                    <div id="sizeMain" class="collapse" style="margin-bottom:15px">
+                                         <div class="table-responsive">
+                                          <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        {% for header in sizeheaders %}
+                                                            <th>{{header}}</th>
+                                                        {% endfor %}
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for size in sizes %}
+                                                        <tr>
+                                                            {% for header in sizeheaders %}
+                                                                <td>{{size[header]}}</td>
+                                                            {% endfor %}
+                                                        </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                          </table>
+                                        </div> 
+                                    </div>
+                                    
+                                    </div>
+                            {% endif %}
                             {% if description %}
-                                <div class="well">
+                                <div class="well description">
                                 {% for line in description %}
                                 <p>{{line}}</p>
                                 {% endfor %}
@@ -130,13 +164,13 @@
                                     {% if sizeheaders %}
                                         <div class="form-group">
                                             <div class="col-sm-offset-3 col-sm-9">
-                                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            <a data-toggle="collapse" href="#collapseSize" aria-expanded="false" aria-controls="collapseExample">
                                             Size Chart
                                             </a>
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-bottom:0px">
-                                            <div class="col-sm-offset-3 col-sm-9 collapse" id="collapseExample" style="margin-bottom:15px">
+                                            <div class="col-sm-offset-3 col-sm-9 collapse" id="collapseSize" style="margin-bottom:15px">
                                                  <div class="table-responsive">
                                                   <table class="table table-condensed">
                                                         <thead>

@@ -76,6 +76,8 @@ for productInfo in productInfos:
 			p  = extract_data_from_myntra(soup)
 		elif "amazon" in productInfo['productUrl']:
 			p  = extract_data_from_amazon(soup)
+		elif "snapdeal" in productInfo['productUrl']:
+			p  = extract_data_from_snapdeal(soup)
 	 	else:
 	 		p = {}
 		if 'fabmiOwned' in productInfo and productInfo['fabmiOwned'] is not '':

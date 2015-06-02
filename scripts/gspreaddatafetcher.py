@@ -45,15 +45,16 @@ def fetchCategoryAndProductInfo(url, productSheetName):
 	products = filter(isCurrent, products)
 	for product in products:
 		try:
-			product['description'] = [line.strip() for line in product['description'].strip().split('\n')]
-			if product['productImgUrl'].strip() is not '':			
+			if product['description'].strip() is not '':
+				product['description'] = [line.strip() for line in product['description'].strip().split('\n')]
+			if product['productImgUrl'].strip() is not '':
 				product['productImgUrl'] = [line.strip() for line in product['productImgUrl'].strip().split('\n')]
 			if product['productImgOriginUrl'].strip() is not '':			
 				product['productImgOriginUrl'] = [line.strip() for line in product['productImgOriginUrl'].strip().split('\n')]
 			if product['sizes'].strip() is not "":
 				product['sizes'] = [getDictionary(x.strip()) for x in product['sizes'].strip().split("\n")]
 				product['sizeheaders'] = product['sizes'][0].keys()
-			if product['colors'] is not "":
+			if product['colors'].strip() is not "":
 				# colorsData = product['colors'].rstrip().split("\n")
 				product['colors'] = [getDictionary(x.strip()) for x in product['colors'].strip().split("\n")]
 		except:

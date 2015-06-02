@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import sys, os
 import requests
 import re
+import uuid
 from filehelper import *
 from shared import *
 from productrender import *
@@ -49,7 +50,7 @@ def extract_data_from_jabong(soup):
 	if disc_price_node is not None and len(disc_price_node.string.strip()) > 0:
 		mrp = price
 		price = disc_price_node.string.strip()
-	return {"imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}
+	return {"seller":"jabong","imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}
 
 def extract_data_from_flipkart(soup):
 	image_url = []
@@ -68,7 +69,7 @@ def extract_data_from_flipkart(soup):
 	# 	print soup
 	price = soup.find("meta", {"itemprop" : "price"}).attrs['content'].strip()
 	productCode = soup.find("input", class_ = "btn-buy-now btn-big  current").attrs['data-pid']
-	return {"imageUrls": image_url, "price": price, "productCode":productCode}
+	return {"seller":"flipkart", "imageUrls": image_url, "price": price, "productCode":productCode}
 
 def extract_data_from_myntra(soup):
 	image_url = []
@@ -83,7 +84,7 @@ def extract_data_from_myntra(soup):
 	price = soup.find("div", class_ = "price").attrs['data-discountedprice'].strip()
 	productCode = soup.find("h4", class_ = "id pdt-code").string.split(":")[1].strip()
 	productName = soup.find("h1", class_="title").string.strip()
-	return {"imageUrls": image_url, "price": price, "productCode":productCode, "productName":productName}
+	return {"seller":"myntra", "imageUrls": image_url, "price": price, "productCode":productCode, "productName":productName}
 
 def extract_data_from_amazon(soup):
 	image_url = []
@@ -106,7 +107,34 @@ def extract_data_from_amazon(soup):
 	ul = product_detail_feature_div.find("ul")
 	li =  ul.find('li')
 	productCode = li.text.replace("ASIN:", "").strip()
-	return {"imageUrls": image_url, "price": price, "productCode":productCode}
+	return {"seller":"amazon", "imageUrls": image_url, "price": price, "productCode":productCode}
+
+def extract_data_from_snapdeal(soup):
+	image_url = []
+	price = ""
+	disc_price = ""
+	mrp = ""
+	out_of_stock = soup.find("div", class_="noLongerProduct")
+	if out_of_stock is not None:
+		return	{"outOfStock": True}
+	ul = soup.find("ul", {"id" : "product-slider"})
+	for li in ul.findAll('li'):
+		std_img = ""
+		if li.img.has_attr('src'):
+			std_img = li.img.attrs['src'].strip()
+		elif li.img.has_attr('lazysrc'):
+			std_img = li.img.attrs['lazysrc'].strip()
+		else :
+			print colored("SnapDeal Image Src not present", "red")
+		image_url.append({"std_img":std_img,"zoom_img":std_img})
+	productCode = str(uuid.uuid1())
+	productDiv = soup.find("div", {"class" : "productTitle"})
+	productH1 = productDiv.find("h1", {"itemprop" : "name"})
+	productName = productH1.string.strip()
+	priceDiv = soup.find("span", {"id" : "selling-price-id"})
+	price = priceDiv.string.strip()
+	toReturn = {"seller":"snapdeal", "imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}
+	return toReturn
 
 # def extract_data_from_aliexpress(soup, tuple):
 # 	url = tuple[0]

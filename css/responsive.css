@@ -1084,6 +1084,10 @@
 		
 	}
 
+	#product-image-container img {
+		max-width: 350px;
+	}	
+
 
 }
 

@@ -1264,7 +1264,7 @@ parent's font-size:0
 	display:block;
 	height: auto;
 	width: auto;
-	max-height: 100px
+	max-height: 100px;
 }
 
 .title {
@@ -3971,6 +3971,7 @@ noUi-target,
 	right:0;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 400px;
 }
 
 #product-image-container .item-price-container {
@@ -4229,8 +4230,8 @@ noUi-target,
  }
  
 .table thead tr th {
-	padding:20px;
-	border-color:transparent;
+/*	padding:20px;
+*/	border-color:transparent;
 	border-right: 1px solid #e0e0e0;
 	background:#fafafa;
 	border-bottom:1px solid #e0e0e0;
@@ -6389,3 +6390,32 @@ html[xmlns] .slides {display: block;}
     text-decoration: underline;	
 }
 
+.seller {
+	display: inline-block;
+	background: transparent url("/images/logo-sprite.png") no-repeat scroll 0% 0% / 100% 400%;
+	width: 95px;
+	height: 45px;
+}
+
+.seller-jabong {
+	background-position: 0px 0px;
+
+}
+
+.seller-snapdeal {
+	background-position: 0px -45px;
+}
+
+.seller-amazon {
+	background-position: 0px -90px;	
+}
+
+.seller-flipkart {
+	background-position: 0px -135px;
+}
+
+.description {
+	margin-top: 20px;
+}
+
+#sizeMain tbody tr > td:first-child { font-weight: bold;}
