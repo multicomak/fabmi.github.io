@@ -198,7 +198,14 @@
                             <div class="lg-margin visible-sm visible-xs"></div><!-- Space -->
                             <h1 class="product-name">Plus Size Tunic</h1>
                             <ul class="product-list">
-                                                                                   
+                                <li>
+                                   <span style="display:inline-block">Seller:</span>
+                                    
+                                       <div class="seller seller-fabmi"></div>
+                                   
+                                </li> 
+                                
+                                    <li><span>Material:</span>Cotton</li>
                                 
                                 
                                 
@@ -212,6 +219,107 @@
                                     <a data-toggle="modal" href="#order-form-content" class="btn btn-custom-2">GET IT</a>
                                 </div><!-- .product-add -->
                             
+                            
+                                    <div>
+                                    <a data-toggle="collapse" href="#sizeMain" aria-expanded="false" aria-controls="sizeMain" style="text-decoration: underline;">
+                                    Size Chart
+                                    </a>
+                                    <div id="sizeMain" class="collapse" style="margin-bottom:15px">
+                                         <div class="table-responsive">
+                                          <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        
+                                                            <th>Size</th>
+                                                        
+                                                            <th>Length</th>
+                                                        
+                                                            <th>Bust</th>
+                                                        
+                                                            <th>Waist</th>
+                                                        
+                                                            <th>Shoulder</th>
+                                                        
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>M</td>
+                                                            
+                                                                <td>29.1</td>
+                                                            
+                                                                <td>43.7</td>
+                                                            
+                                                                <td>40.2</td>
+                                                            
+                                                                <td>19.1</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>L</td>
+                                                            
+                                                                <td>29.5</td>
+                                                            
+                                                                <td>45.3</td>
+                                                            
+                                                                <td>41.7</td>
+                                                            
+                                                                <td>19.3</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>XL</td>
+                                                            
+                                                                <td>29.9</td>
+                                                            
+                                                                <td>46.9</td>
+                                                            
+                                                                <td>43.3</td>
+                                                            
+                                                                <td>19.5</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>2XL</td>
+                                                            
+                                                                <td>30.3</td>
+                                                            
+                                                                <td>48.4</td>
+                                                            
+                                                                <td>44.9</td>
+                                                            
+                                                                <td>19.7</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>3XL</td>
+                                                            
+                                                                <td>30.7</td>
+                                                            
+                                                                <td>50</td>
+                                                            
+                                                                <td>46.5</td>
+                                                            
+                                                                <td>19.9</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                </tbody>
+                                          </table>
+                                        </div> 
+                                    </div>
+                                    
+                                    </div>
                             
                             
                         </div><!-- End .col-md-6 -->
@@ -238,35 +346,130 @@
                                         </div>
                                     </div>
                                     
-                                        <div class="form-group">
-                                            <label for="ordersize" class="col-sm-3 control-label">Select Color</label>      
-                                            <div class="col-sm-9 product-color-filter-container">
-                                                <ul class="filter-color-list clearfix">
-                                                    
-                                                        <li><a href="#" data-bgcolor="" data-color="" class="filter-color-box"></a></li>
-                                                    
-                                                        <li><a href="#" data-bgcolor="" data-color="" class="filter-color-box"></a></li>
-                                                    
-                                                        <li><a href="#" data-bgcolor="" data-color="" class="filter-color-box"></a></li>
-                                                    
-                                                        <li><a href="#" data-bgcolor="" data-color="" class="filter-color-box"></a></li>
-                                                    
-                                                        <li><a href="#" data-bgcolor="" data-color="" class="filter-color-box"></a></li>
-                                                    
-                                                </ul>
-                                            </div><!-- End .product-color-filter-container-->
-                                            <input type="hidden" id="ordercolor" name="ordercolor" value="">
-                                        </div>
-                                    
                                     <div class="form-group">
                                         <label for="ordersize" class="col-sm-3 control-label">Dress Size*</label>
                                         <div class="col-sm-9">
                                             
-                                                <p class="form-control-static"><b>Free Size</b></p>
-                                                <input type="hidden" name="ordersize" value="Free Size"/>
+                                                <select class="form-control" required name="ordersize" id="ordersize">
+                                                    
+                                                    <option value="M">M</option>
+                                                    
+                                                    <option value="L">L</option>
+                                                    
+                                                    <option value="XL">XL</option>
+                                                    
+                                                    <option value="2XL">2XL</option>
+                                                    
+                                                    <option value="3XL">3XL</option>
+                                                    
+                                                </select>
                                             
                                         </div>
                                     </div>
+                                    
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                            <a data-toggle="collapse" href="#collapseSize" aria-expanded="false" aria-controls="collapseExample">
+                                            Size Chart
+                                            </a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom:0px">
+                                            <div class="col-sm-offset-3 col-sm-9 collapse" id="collapseSize" style="margin-bottom:15px">
+                                                 <div class="table-responsive">
+                                                  <table class="table table-condensed">
+                                                        <thead>
+                                                            <tr>
+                                                                
+                                                                    <th>Size</th>
+                                                                
+                                                                    <th>Length</th>
+                                                                
+                                                                    <th>Bust</th>
+                                                                
+                                                                    <th>Waist</th>
+                                                                
+                                                                    <th>Shoulder</th>
+                                                                
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>M</td>
+                                                                    
+                                                                        <td>29.1</td>
+                                                                    
+                                                                        <td>43.7</td>
+                                                                    
+                                                                        <td>40.2</td>
+                                                                    
+                                                                        <td>19.1</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>L</td>
+                                                                    
+                                                                        <td>29.5</td>
+                                                                    
+                                                                        <td>45.3</td>
+                                                                    
+                                                                        <td>41.7</td>
+                                                                    
+                                                                        <td>19.3</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>XL</td>
+                                                                    
+                                                                        <td>29.9</td>
+                                                                    
+                                                                        <td>46.9</td>
+                                                                    
+                                                                        <td>43.3</td>
+                                                                    
+                                                                        <td>19.5</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>2XL</td>
+                                                                    
+                                                                        <td>30.3</td>
+                                                                    
+                                                                        <td>48.4</td>
+                                                                    
+                                                                        <td>44.9</td>
+                                                                    
+                                                                        <td>19.7</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>3XL</td>
+                                                                    
+                                                                        <td>30.7</td>
+                                                                    
+                                                                        <td>50</td>
+                                                                    
+                                                                        <td>46.5</td>
+                                                                    
+                                                                        <td>19.9</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                        </tbody>
+                                                  </table>
+                                                </div> 
+                                            </div>
+                                        </div>
                                     
                                     <div class="form-group">
                                         <label required class="col-sm-3 control-label">Delivery Time   <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="We get the products from our partners on order basis. We are working hard to get it sonner for you">Why late?</a> </label>     

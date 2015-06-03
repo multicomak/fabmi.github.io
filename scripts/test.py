@@ -1,6 +1,7 @@
 import sys, os, errno
 import requests
 import re
+import traceback
 from bs4 import BeautifulSoup
 from os.path import basename
 import unicodecsv
@@ -101,9 +102,9 @@ for productInfo in productInfos:
 			product['productImg2Url'] = productImgForCategoryPage[1]['std_img']
 		product = dict((k,v) for k, v in product.iteritems() if str(v).strip() != "")
 		category.add_Product(product)
-	except:
+	except Exception, err:
 		print "Error Processing Product" + str(productInfo)
-		print "Unexpected error:", sys.exc_info()
+		print(traceback.print_exc())
 		failedProducts.append(productInfo['productUrl'])
 
 renderCategory(category.__dict__, rootDir, os.path.join(os.path.abspath(arguments.destination_dir), arguments.category, arguments.sub_category + ".html"))
