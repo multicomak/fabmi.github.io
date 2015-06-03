@@ -159,3 +159,39 @@ def extract_data_from_snapdeal(soup):
 # 	#downloadfile(image_url, "/tmp", product_id)
 # 	d = Data(image_url, price, disc_price, False, product_id, True)
 # 	return d
+
+def validate_images_from_dhgate(soup, images):
+	large_img_div = soup.find("div", class_="see-larger-image")
+	itemcode = soup.find("input", {"id" : "itemcode"}).attrs['value']
+	productid = soup.find("input", {"id" : "productid"}).attrs['value']	
+	urltemplate = "http://www.dhgate.com/product/getProductImages.do?act=getProductImages&itemcode={0}&pid={1}"
+	r = requests_session.get(urltemplate.format(itemcode, productid))
+	content = r.content
+	potential_bad_img = []
+	for img in images:
+		if not img in content:
+			potential_bad_img.append(img)
+	if potential_bad_img:
+		print colored("Bad Images:" + str(potential_bad_img), "red")
+		raise ValueError('Bad Images Found')
+
+def validate_images_from_aliexpress(soup, images):
+	potential_bad_img = []
+	soup_str = str(soup)
+	for img in images:
+		imgname = img.rsplit('/',1)[1]
+		if not str(imgname) in soup_str:
+			potential_bad_img.append(img)
+	if potential_bad_img:
+		productid = soup.find("input", {"name" : "objectId"}).attrs['value']	
+	 	urltemplate = "http://desc.aliexpress.com/getDescModuleAjax.htm?productId={0}"
+		r = requests_session.get(urltemplate.format(productid))
+		content = r.content
+		bad_images = []
+		for img in potential_bad_img:
+			if not img in content:
+				bad_images.append(img)
+
+		if bad_images:
+			print colored("Bad Images:" + str(bad_images), "red")
+			raise ValueError('Bad Images Found')

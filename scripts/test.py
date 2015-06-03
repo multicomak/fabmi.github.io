@@ -84,6 +84,10 @@ for productInfo in productInfos:
 		if 'fabmiOwned' in productInfo and productInfo['fabmiOwned'] is not '':
 			if productInfo['productImgUrl'] is "" and  productInfo['productImgOriginUrl'] is not "":
 				setImageUrlsForFabmiOwnedProducts(productInfo, os.path.join(os.sep, 'images', category.category.lower(), category.subCategory, productInfo['productCode']), len(productInfo['productImgOriginUrl']))
+			if "dhgate" in productInfo['productUrl']:
+				validate_images_from_dhgate(soup, productInfo['productImgOriginUrl'])
+			elif "aliexpress" in productInfo['productUrl']:
+				validate_images_from_aliexpress(soup, productInfo['productImgOriginUrl'])
 		product = dict(productInfo.items() + p.items())
 		if 'outOfStock'  in product:
 			print colored("Out ot Stock" + product['productUrl'], "yellow")

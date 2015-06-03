@@ -3,6 +3,23 @@ import os
 import subprocess
 from os import listdir
 from os.path import isfile, join
+from urllib import pathname2url 
+from urlparse import urlsplit, urlunsplit, parse_qsl
+from urllib import urlencode
+import urlnorm
+
+def canonizeurl(url):
+    split = urlsplit(urlnorm.norm(url))
+    path = split[2].split(' ')[0]
+
+    while path.startswith('/..'):
+        path = path[3:]
+
+    while path.endswith('%20'):
+        path = path[:-3]
+
+    qs = urlencode(sorted(parse_qsl(split.query)))
+    return urlunsplit((split.scheme, split.netloc, path, qs, ''))
 
 def scaleimage(imageurl, outputfile, pad):
 	scaleType = ''
@@ -10,7 +27,7 @@ def scaleimage(imageurl, outputfile, pad):
 		scaleType = 'pad'
 	else:
 		scaleType = 'crop'
-	subprocess.call(['./aspect', '300x420', '-m', scaleType, imageurl, outputfile])
+	subprocess.call(['./aspect', '300x420', '-m', scaleType, canonizeurl(imageurl), outputfile])
 
 def scaleimagetofile(imageurl, outputdir, filename):
 	outputfile1 = os.path.join(outputdir, filename)
