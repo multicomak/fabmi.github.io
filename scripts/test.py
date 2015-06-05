@@ -81,6 +81,8 @@ for productInfo in productInfos:
 			p  = extract_data_from_snapdeal(soup)
 	 	else:
 	 		p = {}
+ 		if productInfo['productName'] is '' and 'siteProductName' in productInfo :
+ 			productInfo['productName'] = productInfo['siteProductName']	
 		if 'fabmiOwned' in productInfo and productInfo['fabmiOwned'] is not '':
 			if productInfo['productImgUrl'] is "" and  productInfo['productImgOriginUrl'] is not "":
 				setImageUrlsForFabmiOwnedProducts(productInfo, os.path.join(os.sep, 'images', category.category.lower(), category.subCategory, productInfo['productCode']), len(productInfo['productImgOriginUrl']))

@@ -50,7 +50,7 @@ def extract_data_from_jabong(soup):
 	if disc_price_node is not None and len(disc_price_node.string.strip()) > 0:
 		mrp = price
 		price = disc_price_node.string.strip()
-	return {"seller":"jabong","imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}
+	return {"seller":"jabong","imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "siteProductName":productName}
 
 def extract_data_from_flipkart(soup):
 	image_url = []
@@ -84,7 +84,7 @@ def extract_data_from_myntra(soup):
 	price = soup.find("div", class_ = "price").attrs['data-discountedprice'].strip()
 	productCode = soup.find("h4", class_ = "id pdt-code").string.split(":")[1].strip()
 	productName = soup.find("h1", class_="title").string.strip()
-	return {"seller":"myntra", "imageUrls": image_url, "price": price, "productCode":productCode, "productName":productName}
+	return {"seller":"myntra", "imageUrls": image_url, "price": price, "productCode":productCode, "siteProductName":productName}
 
 def extract_data_from_amazon(soup):
 	image_url = []
@@ -96,7 +96,8 @@ def extract_data_from_amazon(soup):
 		children = out_of_stock.findChildren()
 		if len(children) > 0 and "in stock" not in str(children).lower():
 			return	{"outOfStock": True}
-	for img in soup.find_all("img", class_= "a-dynamic-image"):
+	main_img_container = soup.find("div", {"id" : "main-image-container"})
+	for img in main_img_container.find_all("img", class_= "a-dynamic-image"):
 		std_img = img.attrs['src']
 		image_url.append({"std_img":std_img,"zoom_img":std_img})
 	price_div = soup.find("span", {"id" : "priceblock_ourprice"})
@@ -133,7 +134,7 @@ def extract_data_from_snapdeal(soup):
 	productName = productH1.string.strip()
 	priceDiv = soup.find("span", {"id" : "selling-price-id"})
 	price = priceDiv.string.strip()
-	toReturn = {"seller":"snapdeal", "imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "productName":productName}
+	toReturn = {"seller":"snapdeal", "imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "siteProductName":productName}
 	return toReturn
 
 # def extract_data_from_aliexpress(soup, tuple):
@@ -172,20 +173,9 @@ def validate_images_from_dhgate(soup, images):
 		if not img in content:
 			potential_bad_img.append(img)
 	if potential_bad_img:
-		print colored("Bad Images:" + str(potential_bad_img), "red")
-		raise ValueError('Bad Images Found')
-
-def validate_images_from_aliexpress(soup, images):
-	potential_bad_img = []
-	soup_str = str(soup)
-	for img in images:
-		imgname = img.rsplit('/',1)[1]
-		if not str(imgname) in soup_str:
-			potential_bad_img.append(img)
-	if potential_bad_img:
-		productid = soup.find("input", {"name" : "objectId"}).attrs['value']	
-	 	urltemplate = "http://desc.aliexpress.com/getDescModuleAjax.htm?productId={0}"
-		r = requests_session.get(urltemplate.format(productid))
+		specificationInfoUrl = soup.find("div", {"id" : "specificationInfo"}).attrs['data-url']	
+		urltemplate = "http://www.dhgate.com{0}"
+		r = requests_session.get(urltemplate.format(specificationInfoUrl))
 		content = r.content
 		bad_images = []
 		for img in potential_bad_img:
@@ -194,4 +184,27 @@ def validate_images_from_aliexpress(soup, images):
 
 		if bad_images:
 			print colored("Bad Images:" + str(bad_images), "red")
+			raise ValueError('Bad Images Found')
+
+def validate_images_from_aliexpress(soup, images):
+	potential_bad_img = []
+	soup_str = str(soup)
+	for img in images:
+		if img is not "":
+			imgname = img.rsplit('/',1)[1]
+			if not str(imgname) in soup_str:
+				potential_bad_img.append(img)
+	if potential_bad_img:
+		images =list(potential_bad_img)
+		potential_bad_img = []
+		productid = soup.find("input", {"name" : "objectId"}).attrs['value']	
+	 	urltemplate = "http://desc.aliexpress.com/getDescModuleAjax.htm?productId={0}"
+		r = requests_session.get(urltemplate.format(productid))
+		content = r.content
+		for img in images:
+			if not img[:img.find('?')] in content:
+				potential_bad_img.append(img)
+
+	if potential_bad_img:
+			print colored("Bad Images:" + str(potential_bad_img), "red")
 			raise ValueError('Bad Images Found')
