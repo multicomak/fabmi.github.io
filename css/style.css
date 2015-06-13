@@ -6347,10 +6347,9 @@ html[xmlns] .slides {display: block;}
 }
 
 #shop {
-	margin-top: 20px;
 	margin-bottom: 30px;
 	text-align: center;
-
+	border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
 
 #shop .img-container {

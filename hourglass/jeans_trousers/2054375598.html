@@ -224,6 +224,83 @@
                                 </div><!-- .product-add -->
                             
                             
+                                    <div>
+                                    <a data-toggle="collapse" href="#sizeMain" aria-expanded="false" aria-controls="sizeMain" style="text-decoration: underline;">
+                                    Size Chart (In Inches)
+                                    </a>
+                                    <div id="sizeMain" class="collapse" style="margin-bottom:15px">
+                                         <div class="table-responsive">
+                                          <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        
+                                                            <th>Size</th>
+                                                        
+                                                            <th>Waist</th>
+                                                        
+                                                            <th>Length</th>
+                                                        
+                                                            <th>Thigh</th>
+                                                        
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>34</td>
+                                                            
+                                                                <td>24.4-26</td>
+                                                            
+                                                                <td>34.6</td>
+                                                            
+                                                                <td>17.3-18.9</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>36</td>
+                                                            
+                                                                <td>25.2-26.8</td>
+                                                            
+                                                                <td>35</td>
+                                                            
+                                                                <td>18.1-20.5</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>38</td>
+                                                            
+                                                                <td>26.8-28.3</td>
+                                                            
+                                                                <td>36.2</td>
+                                                            
+                                                                <td>19.7-21.3</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                        <tr>
+                                                            
+                                                                <td>40</td>
+                                                            
+                                                                <td>28.3-29.9</td>
+                                                            
+                                                                <td>37.4</td>
+                                                            
+                                                                <td>21.3-22.8</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                </tbody>
+                                          </table>
+                                        </div> 
+                                    </div>
+                                    
+                                    </div>
+                            
                             
                         </div><!-- End .col-md-6 -->
                             
@@ -253,11 +330,100 @@
                                         <label for="ordersize" class="col-sm-3 control-label">Dress Size*</label>
                                         <div class="col-sm-9">
                                             
-                                                <p class="form-control-static"><b>Free Size</b></p>
-                                                <input type="hidden" name="ordersize" value="Free Size"/>
+                                                <select class="form-control" required name="ordersize" id="ordersize">
+                                                    
+                                                    <option value="34">34</option>
+                                                    
+                                                    <option value="36">36</option>
+                                                    
+                                                    <option value="38">38</option>
+                                                    
+                                                    <option value="40">40</option>
+                                                    
+                                                </select>
                                             
                                         </div>
                                     </div>
+                                    
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                            <a data-toggle="collapse" href="#collapseSize" aria-expanded="false" aria-controls="collapseExample">
+                                            Size Chart
+                                            </a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom:0px">
+                                            <div class="col-sm-offset-3 col-sm-9 collapse" id="collapseSize" style="margin-bottom:15px">
+                                                 <div class="table-responsive">
+                                                  <table class="table table-condensed">
+                                                        <thead>
+                                                            <tr>
+                                                                
+                                                                    <th>Size</th>
+                                                                
+                                                                    <th>Waist</th>
+                                                                
+                                                                    <th>Length</th>
+                                                                
+                                                                    <th>Thigh</th>
+                                                                
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>34</td>
+                                                                    
+                                                                        <td>24.4-26</td>
+                                                                    
+                                                                        <td>34.6</td>
+                                                                    
+                                                                        <td>17.3-18.9</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>36</td>
+                                                                    
+                                                                        <td>25.2-26.8</td>
+                                                                    
+                                                                        <td>35</td>
+                                                                    
+                                                                        <td>18.1-20.5</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>38</td>
+                                                                    
+                                                                        <td>26.8-28.3</td>
+                                                                    
+                                                                        <td>36.2</td>
+                                                                    
+                                                                        <td>19.7-21.3</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    
+                                                                        <td>40</td>
+                                                                    
+                                                                        <td>28.3-29.9</td>
+                                                                    
+                                                                        <td>37.4</td>
+                                                                    
+                                                                        <td>21.3-22.8</td>
+                                                                    
+                                                                </tr>
+                                                            
+                                                        </tbody>
+                                                  </table>
+                                                </div> 
+                                            </div>
+                                        </div>
                                     
                                     <div class="form-group">
                                         <label required class="col-sm-3 control-label">Delivery Time   <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="We get the products from our partners on order basis. We are working hard to get it sonner for you">Why late?</a> </label>     

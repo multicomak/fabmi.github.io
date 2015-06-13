@@ -8,8 +8,10 @@ Revolution Slider 4.1 Captions - FABMI
 	padding:0;
 	overflow:hidden;
 	overflow:hidden;
-	background:#E6D7D0;
-
+/*	background:#E6D7D0;
+*/
+	background-image:url('../images/hero4.jpg');
+	background-size:cover;
 }
  
 #slider-rev{
