@@ -12,6 +12,9 @@ def productRow(header, row):
 def isCurrent(x):
 	return x['current'].lower() == "true"
 
+def isNonEmpty(x):
+	return x is not "";
+
 def compare(item1, item2):
 	return (item1['new'] < item2['new'])
 
@@ -50,7 +53,7 @@ def fetchCategoryAndProductInfo(url, productSheetName):
 			if product['productImgUrl'].strip() is not '':
 				product['productImgUrl'] = [line.strip() for line in product['productImgUrl'].strip().split('\n')]
 			if product['productImgOriginUrl'].strip() is not '':			
-				product['productImgOriginUrl'] = [line.strip() for line in product['productImgOriginUrl'].strip().split('\n')]
+				product['productImgOriginUrl'] = filter(isNonEmpty, [line.strip() for line in product['productImgOriginUrl'].strip().split('\n')])
 			if product['sizes'].strip() is not "":
 				product['sizes'] = [getDictionary(x.strip()) for x in product['sizes'].strip().split("\n")]
 				product['sizeheaders'] = product['sizes'][0].keys()

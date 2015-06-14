@@ -47,6 +47,10 @@ def extract_data_from_jabong(soup):
 		disc_price_node = soup.find("span", {"itemprop" : "price"})
 	if disc_price_node is not None and disc_price_node.string is None:
 		print colored("Jabong Discount Price HTML Element not in expected format", "red")
+	if disc_price_node is None or len(disc_price_node.string.strip()) == 0:
+		spl_price_div = soup.find("div", {"id" : "product_special_price"})
+		if spl_price_div is not None and spl_price_div.string is not None:
+			disc_price_node = spl_price_div
 	if disc_price_node is not None and len(disc_price_node.string.strip()) > 0:
 		mrp = price
 		price = disc_price_node.string.strip()
