@@ -276,11 +276,6 @@
 		padding-top: 10px;
 	}
 
-	#menu-right-side,
- 	.logo-container {
-		float:none;
-	}
-
 	.logo-container  {
 		margin-bottom:10px;
 	}
@@ -601,10 +596,10 @@
 	}
 	
 	
-	#menu-right-side,
+/*	#menu-right-side,
 	.logo-container {
 		float:none;
-	}
+	}*/
 
 	.logo-container {
 		margin-bottom:10px;
@@ -1095,6 +1090,7 @@
 	.sidebar .widget.banner-slider-container {
 		width:100%;
 	}
+
 }
 
 
