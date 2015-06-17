@@ -6309,14 +6309,17 @@ html[xmlns] .slides {display: block;}
 
 
 .shopby {
-	background: #FF8B8E none repeat scroll 0% 0%;
-	border-top: 10px solid rgba(0, 0, 0, 0.1);	
-	color: #FFFFFF;
-	min-height: 500px;
+/*	background: #FF8B8E none repeat scroll 0% 0%;
+*/	border-top: 1px solid rgba(0, 0, 0, 0.1);	
+	color: #737373;
+	min-height: 414px;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 .shopby h1 {
-	color: #ffffff;
+	color: #737373;
+	margin-bottom: 20px;
 }
 
 .shopby2 {
@@ -6336,6 +6339,9 @@ html[xmlns] .slides {display: block;}
 	margin-top: 30px;
 }
 
+.shopbyaction li {
+	margin-top: 10px;
+}
 .shopby .btn {
 	border:1px solid #FFFFFF;
 	color: white;
