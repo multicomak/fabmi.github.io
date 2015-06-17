@@ -6432,3 +6432,8 @@ html[xmlns] .slides {display: block;}
 }
 
 #sizeMain tbody tr > td:first-child { font-weight: bold;}
+
+.hero-text {
+	color: #ffffff;
+	text-shadow: 2px 1px 0 rgba(0,0,0, 0.1);
+}
