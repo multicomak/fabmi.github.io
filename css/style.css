@@ -6332,6 +6332,12 @@ html[xmlns] .slides {display: block;}
 */	min-height: 500px;	
 }
 
+.peronal_shopper_photo {
+	background-image: url("/images/personal-shopper1.jpg");
+	height:413px;
+	background-size: cover;
+}
+
 /*.shopby2 h1 {
 	color: #FF7579;
 }
