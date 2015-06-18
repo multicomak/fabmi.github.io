@@ -6317,6 +6317,9 @@ html[xmlns] .slides {display: block;}
 	margin-right: -15px;
 }
 
+.shopbyitem {
+	margin-bottom: 20px;
+}
 .shopby h1 {
 	color: #737373;
 	margin-bottom: 20px;
@@ -6342,11 +6345,11 @@ html[xmlns] .slides {display: block;}
 .shopbyaction li {
 	margin-top: 10px;
 }
-.shopby .btn {
+/*.shopby .btn {
 	border:1px solid #FFFFFF;
 	color: white;
 }
-
+*/
 #personal_stylist{
 /*	background-color: #FFF0A3;
 */
@@ -6377,7 +6380,7 @@ html[xmlns] .slides {display: block;}
     width: 100%;
 
     color: #fff;
-    background: rgba(0,0,0,0.5);   
+    background: rgba(255,117,121,0.5);
 }
 
 .img-footer h1 {
