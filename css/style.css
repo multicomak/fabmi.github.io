@@ -1402,6 +1402,10 @@ section #about {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+section #about h4 {
+	color: white;
+}
+
 
 section .first {
 	background: none repeat scroll 0% 0% padding-box #FFFFFF;
