@@ -237,7 +237,7 @@
                                 
                                 
                                     <li id="COD"><span>Payment:</span><font>Cash on Delivery</font></li>
-                                    <li id="productcode"><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
+                                    <li><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
                                 
                             </ul>
                             <hr>
@@ -573,11 +573,17 @@
                                     <input class="btn btn-custom" type="submit" value="Send" id="submit">
                                     <a href="#" class="btn" data-dismiss="modal">Nah.</a>
                                 </div>
+                                
+                                    <input id="productcode" type="hidden" name="productCode" value="fabmi1820105623">
+                                    <input id="category" type="hidden" name="category" value="Straight">
+                                    <input id="subcategory" type="hidden" name="subCategory" value="shorts_capris">
+                                
                             </form>
                         </div>
                         <script>
                         $(function () {
-                            $('a').tooltip();                            })
+                            $('a').tooltip();
+                        })
                         </script>
                     </div><!-- End #ordermodal --> 
                     <div id="thanksmodal" class="modal-dialog hide">
