@@ -62,7 +62,7 @@
                                 {% endif %}
                                 {% if fabmiOwned %}
                                     <li id="COD"><span>Payment:</span><font>Cash on Delivery</font></li>
-                                    <li id="productcode"><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
+                                    <li><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
                                 {% endif %}
                             </ul>
                             <hr>
@@ -219,11 +219,17 @@
                                     <input class="btn btn-custom" type="submit" value="Send" id="submit">
                                     <a href="#" class="btn" data-dismiss="modal">Nah.</a>
                                 </div>
+                                {% if productCode %}
+                                    <input id="productcode" type="hidden" name="productCode" value="{{productCode}}">
+                                    <input id="category" type="hidden" name="category" value="{{category}}">
+                                    <input id="subcategory" type="hidden" name="subCategory" value="{{subCategory}}">
+                                {% endif %}
                             </form>
                         </div>
                         <script>
                         $(function () {
-                            $('a').tooltip();                            })
+                            $('a').tooltip();
+                        })
                         </script>
                     </div><!-- End #ordermodal --> 
                     <div id="thanksmodal" class="modal-dialog hide">

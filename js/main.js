@@ -1052,12 +1052,14 @@ function checkSupport(elemname, pluginname) {
     });
     $('#order-form').on('submit', function (event) {
     	event.preventDefault()
-        var productcode = $('#productcode font').text();
+        var productcode = $('#productcode').val();
         var email = $('#orderemail').val();
         var size = $('select[name=ordersize]').val();
         var message = $('#ordermessage').val();
         var color = $('#ordercolor').val();
         var deliverytype = $('input:checked[name=orderdeliverytype]').val();
+        var category = $('#category').val();
+        var subCategory = $('#subcategory').val();
         $.ajax({
             url: "https://docs.google.com/forms/d/18SIsSj1fMwbGQnJoRPD8sG_o1yMa3_QpGAtO5B_poUg/formResponse",
             data: { "entry.1623113492": productcode, 
@@ -1065,7 +1067,9 @@ function checkSupport(elemname, pluginname) {
             "entry.790301478": size, 
             "entry.1581592326": color,
             "entry.647617798": message,
-            "entry.962671711": deliverytype
+            "entry.962671711": deliverytype,
+            "entry.1591841909": category,
+            "entry.1983414638": subCategory
              },
             type: "POST",
             dataType: "xml",
@@ -1074,7 +1078,6 @@ function checkSupport(elemname, pluginname) {
             $("#thanksmodal").removeClass('hide')
             });
     });
-
     $('#ordermodelclosebtn').on('click', function (event) {
             $("#thanksmodal").addClass('hide')
             $("#ordermodal").removeClass('hide')

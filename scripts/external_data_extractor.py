@@ -188,7 +188,6 @@ def validate_images_from_dhgate(soup, images):
 
 		if bad_images:
 			print colored("Bad Images:" + str(bad_images), "red")
-			raise ValueError('Bad Images Found')
 
 def validate_images_from_aliexpress(soup, images):
 	potential_bad_img = []
@@ -211,4 +210,3 @@ def validate_images_from_aliexpress(soup, images):
 
 	if potential_bad_img:
 			print colored("Bad Images:" + str(potential_bad_img), "red")
-			raise ValueError('Bad Images Found')

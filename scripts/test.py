@@ -1,4 +1,5 @@
 import sys, os, errno
+import random
 import requests
 import re
 import traceback
@@ -15,6 +16,7 @@ from categoryrender import *
 from productrender import *
 from generateimages import *
 from termcolor import colored
+from fake_useragent import UserAgent
 
 
 def mkdir_p(path):
@@ -26,6 +28,7 @@ def mkdir_p(path):
         else: raise
 
 requests_session = requests.Session()
+ua = UserAgent()
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', action='store', dest='input_file_url',
                     help='Input File Url', required=True)
@@ -56,6 +59,8 @@ if arguments.only_index:
 	productInfos = [productInfos[int(index)] for index in arguments.only_index.split(",")]
 for productInfo in productInfos:
 	print "Fetching info for:" + productInfo['productUrl']
+	userAgent = ua.random
+	requests_session.headers.update({'User-Agent': userAgent})	
 	r = requests_session.get(productInfo['productUrl'])
 	soup = BeautifulSoup(r.content)
 	# if "flipkart" in site_url:

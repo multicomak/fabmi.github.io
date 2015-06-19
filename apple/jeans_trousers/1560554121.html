@@ -196,6 +196,8 @@
                                     
                                     <li class="active-slide"><a data-rel='prettyPhoto' href="/images/apple/jeans_trousers/1560554121/prod_1.jpg" ><img src="/images/apple/jeans_trousers/1560554121/prod_1.jpg" alt="jacket photo 1"></a></li>
                                     
+                                    <li ><a data-rel='prettyPhoto' href="/images/apple/jeans_trousers/1560554121/prod_2.jpg" ><img src="/images/apple/jeans_trousers/1560554121/prod_2.jpg" alt="jacket photo 2"></a></li>
+                                    
 
                             </ul><!-- End product-carousel -->
                             </div>
@@ -229,7 +231,7 @@
                                 
                                 
                                     <li id="COD"><span>Payment:</span><font>Cash on Delivery</font></li>
-                                    <li id="productcode"><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
+                                    <li><span>Return/Exchange:</span><font><a href="/customer_service.html" target="_blank">Check Here</a></font></li>
                                 
                             </ul>
                             <hr>
@@ -527,11 +529,17 @@
                                     <input class="btn btn-custom" type="submit" value="Send" id="submit">
                                     <a href="#" class="btn" data-dismiss="modal">Nah.</a>
                                 </div>
+                                
+                                    <input id="productcode" type="hidden" name="productCode" value="1560554121">
+                                    <input id="category" type="hidden" name="category" value="Apple">
+                                    <input id="subcategory" type="hidden" name="subCategory" value="jeans_trousers">
+                                
                             </form>
                         </div>
                         <script>
                         $(function () {
-                            $('a').tooltip();                            })
+                            $('a').tooltip();
+                        })
                         </script>
                     </div><!-- End #ordermodal --> 
                     <div id="thanksmodal" class="modal-dialog hide">
@@ -609,7 +617,7 @@
             carouselContainer.elastislide({
                 orientation : 'vertical',
                 
-                    minItems: 1
+                    minItems: 2
                                     
                     
             });
