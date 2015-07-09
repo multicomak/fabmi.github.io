@@ -229,6 +229,9 @@
 
 }
  
+@media (min-width: 768px) {
+
+} 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
 	
@@ -497,6 +500,7 @@
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
  	
+
 	.home-banners a {
 		margin-right:auto;
 		margin-left:auto;
@@ -517,6 +521,11 @@
 	#page-header .page-header-desc {
 		font-size:18px;
 		line-height:26px;
+	}
+
+	section #hero h1{
+		line-height: 31px;
+		font-size: 28px;
 	}
 
 	.hero-unit h2 {
@@ -994,6 +1003,11 @@
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	
+	section #hero {
+		min-height:400px;
+		color: #FFF;
+	}
+
 	.dropdown-cart-menu-container {
 		display:none;
 	} 
@@ -1083,6 +1097,11 @@
 		max-width: 300px;
 	}	
 
+	ul.thumbnails.image_picker_selector li {
+	    margin-left: auto;
+	    margin-right: auto;	    
+	    display: block;
+	}
 
 }
 
@@ -1090,6 +1109,11 @@
 	.sidebar .widget.banner-slider-container {
 		width:100%;
 	}
+
+	section #hero h1{
+		line-height: 16px;
+		font-size: 15px;
+	}	
 
 }
 
