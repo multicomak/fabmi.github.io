@@ -1406,17 +1406,31 @@ section #about h4 {
 	color: white;
 }
 
+section #getStarted {
+/*    background: none repeat scroll 0% 0% padding-box #7F6D6F;
+*/
+	background: url(../images/bg-dark.jpg);
+	background-size: repeat;
+	color:white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 100px;
+}
+
+section #getStarted h1, section #getStarted h4 {
+	color:white;
+}
+
 section #hero {
-	background: url(../images/hero5.jpg);
+	background: url(../images/sl211.jpg);
 	min-height:600px;
 	background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-color: #EEEFEE
 	color: #FFF;
 }
 
 section #hero .copy{
-	padding-top: 100px;
+	padding-top: 150px;
 }
 
 
@@ -1437,7 +1451,16 @@ section #hero p{
 	font-size: 18px;
 }
 
+section #hero  a i {
+    font-size: 40px;
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    color: #FFF;
+}
+
 section  #how_it_works {
+	padding-top: 50px;
 	min-height: 500px;
 }
 
@@ -5346,7 +5369,7 @@ noUi-target,
   background-color: #ff7579;
   border-color: transparent;
   -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
-	box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .btn-custom:hover,
@@ -5766,7 +5789,7 @@ html[xmlns] .slides {display: block;}
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #428bca;
+  background-color: #ff7579;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -6442,6 +6465,7 @@ html[xmlns] .slides {display: block;}
 
 .img-footer h1 {
 	color: #fff;
+	text-align: center;
 }
 
 .doodle {
@@ -6595,6 +6619,5 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   box-shadow:  0 1px 1px rgba(0,0,0,.075);
 }
 */
-.brand-check {
-	margin: 10px;
-}
+
+

@@ -340,6 +340,9 @@
 		width:720px;
 	}
 	
+	.img-footer h1 {
+	    font-size: 30px;
+	}	
 	.item > .item-image-container {
 		width:180px;
 	}

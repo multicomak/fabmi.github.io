@@ -27,6 +27,8 @@
 .wizard-container{
     z-index: 3;
 }
+
+
 .wizard-card{
     max-height: 430px;
     background-color: #FFFFFF;
@@ -98,11 +100,12 @@
 .wizard-card .wizard-header h3{
     font-weight: 200;
     text-align: center;
-    margin-bottom: 30px;
 }
+
 .wizard-card > ul > li{
     text-align: center;
 }
+
 .wizard-card > ul > li a {
     border: 0 !important;
     text-transform: uppercase;
@@ -227,4 +230,90 @@
     max-width: 80%;
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+.btn.questionnaire-toggle {
+    border-color: #E0E0E0;
+    color: #7C807E;
+    background-color: #FFF;
+    outline: 0px none;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+    
+}
+
+.btn.questionnaire-toggle:hover {
+    border: 1px solid #F5565B;
+    color:#7C807E;
+/*    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;*/
+}
+
+.btn.questionnaire-toggle.active {
+    color: #FFF;
+    background-color: #F5565B;
+    border-color: transparent;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4) inset;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+    
+}
+
+.brand-check {
+    margin: 10px;
+}
+
+
+/*.brand-check {
+    margin: 10px;
+    border-color: #E0E0E0;
+    color: #7C807E;
+    background-color: #FFF;
+    outline: 0px none;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.btn-group .btn.brand-check {
+    border-color: #E0E0E0;
+    color: #7C807E;
+    background-color: #FFF;
+    outline: 0px none;
+    box-shadow: none
+}
+
+.btn-group .btn.brand-check:hover {
+    border: 1px solid #F5565B;
+    color:#7C807E;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+*/
+
+
+.btn.brand-check:hover {
+    border: 1px solid #F5565B;
+    color:#7C807E;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;    
+}
+
+.btn.brand-check.active {
+    color: #FFF;
+    background-color: #F5565B;
+    border-color: transparent;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4) inset;
+}
+
+
+@media (max-width: 1200px) {
+    #wizard .nav > li a {
+        height: 65px;
+    }
+}
+
+@media (max-width: 768px) {
+    #wizard .nav > li:nth-child(n+1) a {
+    border-radius: 0px;    
+    }
 }
