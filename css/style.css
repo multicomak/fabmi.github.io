@@ -1421,8 +1421,8 @@ section #getStarted h1, section #getStarted h4 {
 }
 
 section #hero {
-	background: url(../images/sl211.jpg);
-	min-height:600px;
+/* 	background: url(../images/sl211.jpg);
+     */    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../images/sl211.jpg');	min-height:600px;
 	background-size: cover;
     background-position: center center;
     background-color: #EEEFEE
@@ -1433,6 +1433,19 @@ section #hero .copy{
 	padding-top: 150px;
 }
 
+section #hero #caption {
+	margin-top: 50px;
+}
+
+section  #tagline {
+	background:#EEEFEE none repeat scroll 0% 0%;
+	background:rgba(0, 0, 0, 0.5);
+	min-height: 50px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom:20px;
+	margin-top: 20px;
+}
 
 section #hero h1{
 	color: #FFF;
@@ -1440,7 +1453,6 @@ section #hero h1{
 	letter-spacing: 0px;
 	font-size: 50px;
 	text-shadow: 2px 1px 0 rgba(0,0,0, 0.1);
-	text-transform: uppercase;
 }
 
 section #hero p{
@@ -1454,7 +1466,7 @@ section #hero p{
 section #hero  a i {
     font-size: 40px;
     position: absolute;
-    bottom: 50px;
+    bottom: 10px;
     text-align: center;
     color: #FFF;
 }
@@ -2602,6 +2614,10 @@ select.input-lg {
 	font:400 43px/1 'PT Sans', sans-serif;
 	color:#585858;
 	margin-bottom:10px;
+}
+
+#category-header .category-title h4 {
+	margin-top:20px;
 }
 
 #category-header .category-image {
