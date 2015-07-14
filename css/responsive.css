@@ -60,10 +60,6 @@
 		width:360px;
 	}
 
-	.item > .item-image-container {
-		width:222px;
-	}
-	
 	.item-image-container .item-price-container {
 		font-size:18px;
 		width:90px;
@@ -231,9 +227,12 @@
  
 @media (min-width: 768px) {
 
+	.item > .item-image-container {
+		width:222px;
+	}
 } 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 992px) {
 	
 	.title {
 		font-size:38px;
@@ -257,6 +256,10 @@
 		line-height: 26px;
 	}
 	
+	.img-footer h1 {
+	    font-size: 30px;
+	}	
+		
 	#testimonials-section h3 {
 		font-size:22px;
 		line-height:1;
@@ -338,13 +341,6 @@
 
  	#main-nav-container #main-nav .menu li > .mega-menu {
 		width:720px;
-	}
-	
-	.img-footer h1 {
-	    font-size: 30px;
-	}	
-	.item > .item-image-container {
-		width:180px;
 	}
 	
 	#category-header.category-banner .category-title  {
