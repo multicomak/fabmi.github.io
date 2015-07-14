@@ -119,10 +119,10 @@ def extract_data_from_snapdeal(soup):
 	price = ""
 	disc_price = ""
 	mrp = ""
-	out_of_stock = soup.find("div", class_="noLongerProduct")
+	out_of_stock = soup.find("div", class_="soldDiscontAlert")
 	if out_of_stock is not None:
 		return	{"outOfStock": True}
-	ul = soup.find("ul", {"id" : "product-slider"})
+	ul = soup.find("ul", {"id" : "bx-slider-left-image-panel"})
 	for li in ul.findAll('li'):
 		std_img = ""
 		if li.img.has_attr('src'):
@@ -133,11 +133,12 @@ def extract_data_from_snapdeal(soup):
 			print colored("SnapDeal Image Src not present", "red")
 		image_url.append({"std_img":std_img,"zoom_img":std_img})
 	productCode = str(uuid.uuid1())
-	productDiv = soup.find("div", {"class" : "productTitle"})
+	productDiv = soup.find("div", {"class" : "pdp-fash-topcenter-inner"})
 	productH1 = productDiv.find("h1", {"itemprop" : "name"})
 	productName = productH1.string.strip()
-	priceDiv = soup.find("span", {"id" : "selling-price-id"})
-	price = priceDiv.string.strip()
+	priceDiv = soup.find("div", {"id" : "buyPriceBox"})
+	price = priceDiv.find("span", {"itemprop" : "price"})
+	price = price.string.strip()
 	toReturn = {"seller":"snapdeal", "imageUrls": image_url, "price": price, "mrp": mrp, "productCode":productCode, "siteProductName":productName}
 	return toReturn
 

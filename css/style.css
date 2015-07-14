@@ -152,6 +152,9 @@ blockquote:before{
 	margin-top:-10px;
 }
 
+.padding-top-10px {
+	padding-top: 10px;
+}
 
 .xss-margin,
 .xs-margin,
@@ -1463,12 +1466,21 @@ section #hero p{
 	font-size: 18px;
 }
 
+section #hero .hero-cta {
+	margin-top: 20px;
+}
+
+section #hero .hero-cta .btn {
+	font-size: 18px;
+}
+
 section #hero  a i {
     font-size: 40px;
-    position: absolute;
-    bottom: 10px;
+    position: relative;
+    top: 50px;
     text-align: center;
     color: #FFF;
+    margin-left: -20px
 }
 
 section  #how_it_works {
@@ -6409,6 +6421,7 @@ html[xmlns] .slides {display: block;}
 
 .shopbyitem {
 	margin-bottom: 20px;
+	padding-top:10px;
 }
 .shopby h1 {
 	color: #737373;

@@ -531,6 +531,9 @@
 		font-size: 28px;
 	}
 
+	section #hero .hero-cta {
+		margin-top: 60px;
+	}
 
 	.hero-unit h2 {
 		font-size:26px;
@@ -1015,6 +1018,7 @@
 	section #hero #caption {
 		margin-top: 10px;
 	}
+
 
 	.dropdown-cart-menu-container {
 		display:none;
