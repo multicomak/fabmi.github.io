@@ -1094,15 +1094,4 @@ function checkSupport(elemname, pluginname) {
         $('#ordercolor').val(c);
     });
 
-    $(".image-picker.transition-on-select").imagepicker({selected:function(selected) {
-    	currentTab = $(this).parent()
-        nextTab = $(this).parent().next();
-		nextTabIndex = $(this).parent().index(".tab-pane") + 1;
-/*		currentTab.removeClass("active")
-		nextTab.addClass("active")*/
-		anchor = $("#progressbar li").eq(nextTabIndex).find('a').
-		anchor.addClass('enabled')
-        $("#progressbar li").eq(nextTabIndex).find('a').tab('show');
-    }});
-
 }(jQuery));

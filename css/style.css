@@ -1424,11 +1424,17 @@ section #getStarted h1, section #getStarted h4 {
 }
 
 section #hero {
-/* 	background: url(../images/sl211.jpg);
-     */    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('../images/sl211.jpg');	min-height:600px;
+/* 	background: url(../images/sl211.jpg); */
+	background:#EEEFEE;
+	background-image: url('../images/sl211.jpg'); /* fallback */
+	background-image: url('../images/sl211.jpg'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))); /* Saf4+, Chrome */
+	background-image: url('../images/sl211.jpg'), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Chrome 10+, Saf5.1+ */
+	background-image: url('../images/sl211.jpg'),    -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* FF3.6+ */
+	background-image: url('../images/sl211.jpg'),      -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Opera 11.10+ */
+	background-image: url('../images/sl211.jpg'),         linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* W3C */
+	min-height:600px;
 	background-size: cover;
-    background-position: center center;
-    background-color: #EEEFEE
+	background-position: center center;
 	color: #FFF;
 }
 
