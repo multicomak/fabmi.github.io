@@ -1412,15 +1412,22 @@ section #about h4 {
 section #getStarted {
 /*    background: none repeat scroll 0% 0% padding-box #7F6D6F;
 	background: url(../images/bg-dark.jpg);*/
-	background-color:#ff759c;
+	background-color:#ffa8ab;
+/* 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))); Saf4+, Chrome
+background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); Chrome 10+, Saf5.1+
+background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); FF3.6+
+background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); Opera 11.10+
+background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); W3C
+ */
 	background-size: repeat;
 	color:white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 100px;
 }
 
-section #getStarted h1, section #getStarted h4 {
+section #getStarted h1 {
 	color:white;
+	text-shadow: 2px 1px 0 rgba(0,0,0, 0.1);
 }
 
 section #getStarted .cta {
@@ -1444,9 +1451,9 @@ section #hero {
 	background-image: url('../images/sl211.jpg'); /* fallback */
 	background-image: url('../images/sl211.jpg'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))); /* Saf4+, Chrome */
 	background-image: url('../images/sl211.jpg'), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Chrome 10+, Saf5.1+ */
-	background-image: url('../images/sl211.jpg'),    -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* FF3.6+ */
-	background-image: url('../images/sl211.jpg'),      -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Opera 11.10+ */
-	background-image: url('../images/sl211.jpg'),         linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* W3C */
+	background-image: url('../images/sl211.jpg'), -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* FF3.6+ */
+	background-image: url('../images/sl211.jpg'), -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Opera 11.10+ */
+	background-image: url('../images/sl211.jpg'), linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* W3C */
 	min-height:600px;
 	background-size: cover;
 	background-position: center center;
@@ -5724,7 +5731,7 @@ html[xmlns] .slides {display: block;}
 	width:30px;
 	height:3px;
 	background-color: #ff7579;
-	position:absolute;
+	position:relative;
 	left:50%;
 	top:100%;
 	margin-top:10px;
