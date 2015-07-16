@@ -34,8 +34,11 @@
 		font-size:30px;
 	}
 
+	.testimonial {
+		padding: 0px 150px;
+	}
 
-	.about-us-testimonials .testimonial-title {
+	.testimonial .testimonial-title {
 		font-size:23px;
 	}
 
@@ -224,12 +227,21 @@
 	}
 
 }
+
+@media (min-width: 992px) {
+
+	.testimonial {
+		padding: 0px 150px;
+	}
+} 
+
  
 @media (min-width: 768px) {
 
 	.item > .item-image-container {
 		width:222px;
 	}
+
 } 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 992px) {
@@ -265,11 +277,15 @@
 		line-height:1;
 	}
 
-	.about-us-testimonials .testimonial-title {
+	.testimonial {
+		padding: 0px 100px;
+	}
+
+	.testimonial .testimonial-title {
 		font-size:18px;
 	}
 
-	.about-us-testimonials p {
+	.testimonial p {
 		font-size:16px;
 	}
 
@@ -544,11 +560,11 @@
 		font-size:21px;
 	}
 
-	.about-us-testimonials p {
+	.testimonial p {
 		font-size:16px;
 	}
 
-	.about-us-testimonials .testimonial-title {
+	.testimonial .testimonial-title {
 		font-size:18px;
 	}
 

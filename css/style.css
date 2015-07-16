@@ -1411,8 +1411,8 @@ section #about h4 {
 
 section #getStarted {
 /*    background: none repeat scroll 0% 0% padding-box #7F6D6F;
-*/
-	background: url(../images/bg-dark.jpg);
+	background: url(../images/bg-dark.jpg);*/
+	background-color:#ff75be;
 	background-size: repeat;
 	color:white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1421,6 +1421,21 @@ section #getStarted {
 
 section #getStarted h1, section #getStarted h4 {
 	color:white;
+}
+
+section #getStarted .cta {
+	transition: all 0.3s ease 0s;
+}
+
+section #getStarted .cta:hover,
+section #getStarted .cta:focus
+{
+	opacity: 0.75;
+	color: #fff !important;
+	background-color: #444645;
+	border-color: #444645;
+	-webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 section #hero {
@@ -1506,6 +1521,38 @@ section  #how_it_works {
     font-size: 24px;
 }
 
+section #testimonials-section {
+    text-align: center;
+	background: url(../images/bg-dark.jpg);
+	background-size: repeat;
+	color:white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 60px 0px;
+
+}
+
+section #testimonials-section .carousel-control.left {
+    background-image: none;
+    background-repeat: repeat-x;
+}
+
+section #testimonials-section .carousel-control.right {
+    background-image: none;
+    background-repeat: repeat-x;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 15%;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+    opacity: 0.5;
+}
 
 section .first {
 	background: none repeat scroll 0% 0% padding-box #FFFFFF;
@@ -1536,7 +1583,7 @@ section .second h3 {
     margin: 20px auto 0px;
     height: 5px;
     width: 200px;
-    background: none repeat scroll 0% 0% padding-box #FF7579;
+    background: none repeat scroll 0% 0% padding-box #FFFFFF;
     border-radius: 2.5px;
 }
 
@@ -5861,76 +5908,62 @@ html[xmlns] .slides {display: block;}
 }
 
 #testimonials-section {
-	background-size: cover;
-	-webkit-background-size: cover;
-	background-image: url('../images/testimonialsbg.jpg');
-	background-repeat: no-repeat;
-	background-position:top center;
 	text-align:center;
-	color:#fff;
 	padding:60px 0;
 	overflow: hidden;
+	color: #FFF;
+ 	border-top: 10px solid rgba(0, 0, 0, 0.1);
+
 }
 
 #testimonials-section h3 {
 	position: relative;
 	font-size:28px;
 	line-height:1;
-	color:#fff;
 	text-transform: uppercase;
 	margin-bottom: 90px;
+	color:#fff;
 }
 
 #testimonials-section .small-bottom-border {
-	background-color:#fff;
 	margin-top: 30px;
 }
 
-.about-us-testimonials .testimonial-title {
+.testimonial {
+	padding: 0 50px;
+}
+
+.testimonial .testimonial-title {
 	display:block;
 	font:700 21px/1 "PT Sans", sans-serif;
 	margin-bottom:20px;
 }
 
-.about-us-testimonials {
-	padding-bottom: 50px;
+
+ #testimonials-section .carousel .item {
+	height: auto;
 }
 
-.about-us-testimonials p {
+
+ #testimonials-section .carousel .item:hover {
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+.testimonial p {
 	font-size:18px;
 	line-height:25px;
 	margin-bottom:20px;
 }
 
-.about-us-testimonials .testimonial-owner {
+.testimonial .testimonial-owner {
 	font:italic 700 16px/21px "PT Sans", sans-serif;
 }
 
-.about-us-testimonials .testimonial-date {
+.testimonial .testimonial-date {
 	font:italic 400 14px/21px "PT Sans", sans-serif;
-}
-
-.about-us-testimonials .flex-control-paging li a {
-	background: #fff; 
-}
-
-.about-us-testimonials .flex-control-paging li a:hover { 
-	background: #fff; 
-	transform:scale(1.4);
-	-webkit-transform:scale(1.4);
-	-moz-transform:scale(1.4);
-	-ms-transform:scale(1.4);
-	-o-transform:scale(1.4);
-}
-
-.about-us-testimonials .flex-control-paging li a.flex-active { 
-	background:#fff;
-	cursor: default; 
-	transform:scale(1.4);
-	-webkit-transform:scale(1.4);
-	-moz-transform:scale(1.4);
-	-ms-transform:scale(1.4);
-	-o-transform:scale(1.4);
 }
 
 #team-members-slider-container img {
@@ -6654,5 +6687,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   box-shadow:  0 1px 1px rgba(0,0,0,.075);
 }
 */
+
+
 
 
