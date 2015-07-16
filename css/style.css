@@ -1410,39 +1410,13 @@ section #about h4 {
 }
 
 section #getStarted {
-/*    background: none repeat scroll 0% 0% padding-box #7F6D6F;
-	background: url(../images/bg-dark.jpg);*/
-	background-color:#ffa8ab;
-/* 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))); Saf4+, Chrome
-background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); Chrome 10+, Saf5.1+
-background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); FF3.6+
-background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); Opera 11.10+
-background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); W3C
- */
-	background-size: repeat;
-	color:white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 100px;
 }
 
-section #getStarted h1 {
-	color:white;
-	text-shadow: 2px 1px 0 rgba(0,0,0, 0.1);
-}
-
-section #getStarted .cta {
-	transition: all 0.3s ease 0s;
-}
-
-section #getStarted .cta:hover,
-section #getStarted .cta:focus
-{
-	opacity: 0.75;
-	color: #fff !important;
-	background-color: #444645;
-	border-color: #444645;
-	-webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
-	box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4);
+section #getStarted .heart {
+	padding: 0px 20px;
+	margin-bottom: 20px;
+	color: #FF7579;
 }
 
 section #hero {
