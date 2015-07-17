@@ -1410,7 +1410,7 @@ section #about h4 {
 }
 
 section #getStarted {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 section #getStarted .heart {
@@ -1510,6 +1510,7 @@ section #testimonials-section {
 	color:white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 60px 0px;
+    min-height: 550px;
 
 }
 
