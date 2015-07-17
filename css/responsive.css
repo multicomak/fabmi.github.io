@@ -543,8 +543,13 @@
 		font-size: 28px;
 	}
 
+	section #hero #tagline {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
 	section #hero .hero-cta {
-		margin-top: 60px;
+		margin-top: 30px;
 	}
 
 	.hero-unit h2 {
