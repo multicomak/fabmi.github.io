@@ -5,7 +5,7 @@ import subprocess
 import string
 
 def addoverlay(productname, price, inputfile, outputfile):
-	command_template = string.Template("convert -background '#00000080' -pointsize 25 -fill '#FF7579' label:' FabMi    $productname    Rs $price ' miff:- | composite -gravity south -geometry +0+10 - $inputfile   $outputfile")
+	command_template = string.Template("convert -background '#00000080' -pointsize 22 -fill '#FF7579' label:' FabMi    $productname    Rs $price ' miff:- | composite -gravity south -geometry +0+10 - $inputfile   $outputfile")
 	values = {'productname':productname, 'price':price, 'inputfile':inputfile, 'outputfile':outputfile}
 	command = command_template.substitute(values)
 	print command
