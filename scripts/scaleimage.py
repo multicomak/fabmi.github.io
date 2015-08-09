@@ -5,20 +5,20 @@ import subprocess
 import string
 
 def addoverlay(productname, price, inputfile, outputfile):
-	command_template = string.Template("convert -background '#00000080' -pointsize 22 -fill '#FF7579' label:' FabMi    $productname    Rs $price ' miff:- | composite -gravity south -geometry +0+10 - $inputfile   $outputfile")
+	command_template = string.Template("convert -background '#00000080' -pointsize 20 -fill '#FF7579' label:' FabMi    $productname    Rs $price ' miff:- | composite -gravity south -geometry +0+10 - $inputfile   $outputfile")
 	values = {'productname':productname, 'price':price, 'inputfile':inputfile, 'outputfile':outputfile}
 	command = command_template.substitute(values)
 	print command
 	os.system(command)
 	# subprocess.call([command)
 
-def scaleimage(imageurl, outputfile, pad):
+def scaleimage(imageurl, outputfile, pad, size):
 	scaleType = ''
 	if pad:
 		scaleType = 'pad'
 	else:
 		scaleType = 'crop'
-	subprocess.call(['./aspect', '300x420', '-m', scaleType, imageurl, outputfile])
+	subprocess.call(['./aspect', size, '-m', scaleType, imageurl, outputfile])
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
@@ -33,12 +33,17 @@ if __name__ == '__main__':
 	                    help='Product Name', required=True)
 	parser.add_argument('-p', action='store', dest='price',
 	                    help='Product Price', required=True)
+	parser.add_argument('-s', action='store', dest='size',
+	                    help='Size')
 	arguments = parser.parse_args()
 	if arguments.image_name is None:
 		arguments.image_name = arguments.productname.replace(" ", "").lower() + ".jpg"
+	print arguments.size
+	if arguments.size is None:
+		arguments.size = '300x420'
 	outputfile1 = outputdir = os.path.join(os.path.abspath(arguments.destination_dir), arguments.image_name)
 	# outputfile2 = outputdir = os.path.join(os.path.abspath(arguments.destination_dir), 'pad_' + arguments.image_name)
-	scaleimage(arguments.input_file_url, outputfile1, False)
+	scaleimage(arguments.input_file_url, outputfile1, False, arguments.size)
 	addoverlay(arguments.productname, arguments.price, outputfile1, outputfile1)
 	# scaleimage(arguments.input_file_url, outputfile2, True)	
 	# scaleimage('http://g02.a.alicdn.com/kf/HTB1aCBYHXXXXXa1XXXXq6xXFXXXF/220853895/HTB1aCBYHXXXXXa1XXXXq6xXFXXXF.jpg?size=283752&height=800&width=800&hash=80f505c9c4575b17159e0ba542657e9b', '/tmp/cut.jpg', arguments.isPad)
