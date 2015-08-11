@@ -24,6 +24,7 @@ $(document).ready(function(){
            navigation.find('li').css('width',$width + '%');
         },
         onNext : function(tab, navigation, index){
+
             var wizard = navigation.closest('.wizard-card');
             var tabpaneId = $(navigation.find('li a')[index-1]).attr('href');
             var tabPane = $(wizard).find(tabpaneId)
@@ -33,6 +34,17 @@ $(document).ready(function(){
                 $(".has-error:first :input").focus();
                 return false;
             } else {
+                if (index ==1) {
+                    var data = JSON.stringify($('form#questionnaire').serializeJSON({useIntKeysAsArrayIndex: true}));
+                    $.ajax({
+                            url: "https://docs.google.com/forms/d/1_xhjjP2ySXaQ_jHqC1Nj-L03tcy64Dz0ydDlSZD_QxA/formResponse",
+                            data: { "entry.1180832487": data
+                             },
+                            type: "POST",
+                            dataType: "json",
+                            async: true
+                        });
+                }
                 return true;
             }
 /*            // Disable the posibility to click on tabs
