@@ -1,0 +1,83 @@
+section #hero {
+/* 	background: url(../images/sl211.jpg); */
+	background:#EEEFEE;
+	background-image: url('../images/welcome_hero5.jpg'); /* fallback */
+	background-image: url('../images/welcome_hero5.jpg'), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))); /* Saf4+, Chrome */
+	background-image: url('../images/welcome_hero5.jpg'), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Chrome 10+, Saf5.1+ */
+	background-image: url('../images/welcome_hero5.jpg'), -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* FF3.6+ */
+	background-image: url('../images/welcome_hero5.jpg'), -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* Opera 11.10+ */
+	background-image: url('../images/welcome_hero5.jpg'), linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); /* W3C */
+	min-height:600px;
+	background-size: cover;
+	background-position: left top;
+	color: #FFF;
+}
+
+section #hero .hero-content {
+	padding-left: 50px;
+}
+
+section #hero .copy{
+	padding-top: 20px;
+}
+
+section #hero h1 {
+    color: #FFF;
+    line-height: 45px;
+    letter-spacing: 0px;
+    font-size: 40px;
+    text-shadow: 2px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+section #hero h2 {
+	color: #FFF;
+	text-shadow: 2px 1px 0 rgba(0,0,0, 0.1);
+	line-height: 28px;
+	letter-spacing: 0px;
+	font-size: 20px;
+}
+
+section #hero h4 {
+	color: #FFF;
+	padding-bottom: 20px;
+}
+
+#form {
+    background-color: rgba(10, 10, 10, 0.8);
+    border-top: 1px solid #666;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 30px 15px;
+}
+
+
+#form input[type="email"], input[type="text"] {
+    color: #444;
+    width: 70%;
+    display: inline-block;
+    height: 44px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    background-color: #FFF;
+    margin-bottom: 20px;
+    margin-right:10px;
+    border: 1px solid #DDD;
+    border-radius: 0px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: all 300ms ease-in-out 0s;
+}
+
+section #why_fabmi .heart {
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    color: #FF7579;
+}
+
+@media (max-width: 480px) {
+	
+	section #hero {
+		min-height:400px;
+		color: #FFF;
+	}
+}
