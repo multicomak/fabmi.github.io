@@ -14,7 +14,8 @@ section #hero {
 }
 
 section #hero .hero-content {
-	padding-left: 50px;
+	padding-left: 20px;
+	padding-right: 20px;	
 }
 
 section #hero .copy{
@@ -53,7 +54,7 @@ section #hero h4 {
 
 #form input[type="email"], input[type="text"] {
     color: #444;
-    width: 70%;
+    width: 100%;
     display: inline-block;
     height: 44px;
     padding: 6px 12px;
@@ -73,6 +74,55 @@ section #why_fabmi .heart {
     margin-bottom: 20px;
     color: #FF7579;
 }
+
+@media (min-width: 768px) {
+	section #hero .hero-content {
+		padding-left: 50px;
+	}
+}
+
+@media (max-width: 767px) {
+ 	
+
+	section #hero h1{
+		line-height: 31px;
+		font-size: 28px;
+	}
+
+	section #hero h2 {
+		color: #FFF;
+		text-shadow: 2px 1px 0 rgba(0,0,0, 0.1);
+		line-height: 18px;
+		letter-spacing: 0px;
+		font-size: 16px;
+	}
+
+	#form {
+	    background-color: rgba(10, 10, 10, 0.8);
+	    border-top: 1px solid #666;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	    padding: 20px 20px 10px;
+	}
+
+
+	#form input[type="email"], input[type="text"] {
+	    height: 40px;
+	    padding: 6px;
+	    font-size: 14px;
+	    line-height: 1.42857;
+	    background-color: #FFF;
+	    margin-bottom: 5px;
+	    margin-right:10px;
+	    border: 1px solid #DDD;
+	    border-radius: 0px;
+	    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+	    transition: all 300ms ease-in-out 0s;
+	}
+
+}
+
+
 
 @media (max-width: 480px) {
 	
