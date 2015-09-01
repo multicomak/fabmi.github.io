@@ -13,10 +13,6 @@
         
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/prettyPhoto.css">
-        <link rel="stylesheet" href="css/colpick.css">
-        <link rel="stylesheet" href="css/revslider.css">
-        <link rel="stylesheet" href="css/owl.carousel.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/welcome.css">
@@ -59,7 +55,14 @@
         </script>
     </head>
     <body>
-
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div id="wrapper">
         <header id="header">
            
@@ -335,7 +338,7 @@
                             <h3>FACEBOOK LIKE BOX</h3>
                             
                             <div class="facebook-likebox">
-                                <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Ffabmi.in&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"></iframe>
+                                <div class="fb-page" data-href="https://www.facebook.com/fabmi.in" data-small-header="false" data-adapt-container-width="true" data-hide-cta="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/fabmi.in"><a href="https://www.facebook.com/fabmi.in">FabMi</a></blockquote></div></div>
                             </div>
                             
                             
@@ -352,7 +355,7 @@
                             <ul class="social-links clearfix">
                                 <li><a href="http://facebook.com/fabmi.in" class="social-icon icon-facebook" target="_blank"></a></li>
                                 <li><a href="https://twitter.com/fab_mi" class="social-icon icon-twitter"></a></li>
-                                <li><a href="mailto:someone@example.com?Subject=Hello%20again" class="social-icon icon-email"></a></li>
+                                <li><a href="mailto:connect.fabmi@gmail.com?Subject=Hello%20again" class="social-icon icon-email"></a></li>
                             </ul>
                         </div><!-- End .col-md-7 -->
                         
