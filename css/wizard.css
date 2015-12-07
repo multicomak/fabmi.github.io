@@ -1,9 +1,11 @@
 #wizard .nav-pills > li + li {
     margin-left: 0px;
 }
+#wizard .nav-pills > li{ display:table-cell; width:1%;}
 #wizard .nav-pills > li > a {
     border: 1px solid #2CA8FF;
     border-radius: 0;
+	padding:8px 2px;
     color: #2CA8FF;
     margin-left: -1px;
 }
@@ -347,3 +349,10 @@
         font-size: 100px;
     }
 }
+.men-group .btn{ height:100px; padding:20px 10px; vertical-align:middle; text-align:center; font-weight:600;}
+.men-group .btn small{ display:block; padding:10px;}
+h4{ margin-bottom:16px;}
+.choose-tab{ display:table; width:50%; margin:60px auto; text-align:center;}
+.choose-tab li {width:50%; vertical-align:middle; width:auto; border:2px solid #ddd; }
+.choose-tab li:first-child{ border-bottom:0px;}
+.choose-tab li a{padding:40px 0; text-align:center; font-size:20px; }
