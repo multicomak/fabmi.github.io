@@ -94,7 +94,7 @@
                                 <form action="" method="" id="questionnaire">
                                     <div class="card wizard-card ct-wizard-green" id="wizard">
                                         <div class="wizard-header">
-                                            <h3>Hello, <b>Lady</b></h3>
+                                            <h3>Hello, Welcome to Fabmi.in</h3>
                                             <p class="info-text"><small>We're excited to start styling for you. This profile page will help us know you better. <b>Don't forget — The more we know you, the better we style for you.</b></small></p>
                                         </div>
                                         <ul>
@@ -125,8 +125,8 @@
                                                                                             <div class="row">
                                                     <div class="col-sm-5 col-sm-offset-1">
                                                         <div class="form-group">
-                                                            <label class="control-label">Phone</label>
-                                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" data-error="Please provide your phone number">
+                                                            <label class="control-label">Phone &#42;</label>
+                                                            <input type="text" class="form-control" id="phone" required name="phone" placeholder="Phone Number" data-error="Please provide your phone number">
                                                             <div class="help-block with-errors"></div>
                                                         </div><!-- .form-group -->
                                                     </div><!-- .col-sm-5 .col-sm-offset-1 -->
@@ -189,21 +189,17 @@
                                                 
                                             </div><!-- .tab-pane -->
                                             <div class="tab-pane" id="bodytraits">
-                                                <h4 class="text-center"> Just to get an idea of how things fit you, not to dictate the size of the clothes you will receive.</h4> 
                                                 <hr/>
 
                                                 <div class="md-margin"></div>
                                                  <div class="row">
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-6 panel panel-default">
                                                     <div class="form-group ">
-                                                            <label>Bra Size</label><br><br>
+                                                            <label>Choose Bra Size</label><br><br>
 
                                                             <div classs="form-control">
-                                                                <input type="hidden" name="stylePreference[1][name]" value="Breasts"/>
+                                                                <input type="hidden" name="stylePreference[1][name]" value="BraSize"/>
                                                                 <div class="btn-group radio-group" data-toggle="buttons">
-                                                                    <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
-                                                                        <input type="radio" name="stylePreference[1][value]" value="28">28
-                                                                    </label>
                                                                     <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
                                                                         <input type="radio" name="stylePreference[1][value]" value="30">30
                                                                     </label>
@@ -228,9 +224,36 @@
                                                                       <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
                                                                         <input type="radio" name="stylePreference[1][value]" value="44">44
                                                                     </label>
-                                                                      <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
-                                                                        <input type="radio" name="stylePreference[1][value]" value="48">48
+
+                                                                </div><!-- End .btn-group .radio-group -->
+                                                            </div><!-- End .form-control -->
+                                                            </div>
+                                                            <div class="form-group ">
+                                                            <label>Choose Bra Cup Size</label><br><br>
+
+                                                            <div classs="form-control">
+                                                                <input type="hidden" name="stylePreference[1][name]" value="BraCupSize"/>
+                                                                <div class="btn-group radio-group" data-toggle="buttons">
+                                                                    <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
+                                                                        <input type="radio" name="stylePreference[1][value]" value="A">A
                                                                     </label>
+                                                                    <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
+                                                                        <input type="radio" name="stylePreference[1][value]" value="B">B
+                                                                    </label>
+                                                                      <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
+                                                                        <input type="radio" name="stylePreference[1][value]" value="C">C
+                                                                    </label>
+                                                                     <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
+                                                                        <input type="radio" name="stylePreference[1][value]" value="D">D
+                                                                    </label>
+                                                                       <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
+                                                                        <input type="radio" name="stylePreference[1][value]" value="D">D
+                                                                    </label>
+                                                                    <br><br><br>
+                                                                    <label class="btn questionnaire-toggle" data-toggle="wizard-radio">
+									                                <input type="radio" name="stylePreference[1][value]" value="I'don't know">
+                               											 I Don’t Know My Bra Size </label>
+                                                  
                                                                 </div><!-- End .btn-group .radio-group -->
                                                             </div><!-- End .form-control -->
                                                             </div>
@@ -241,7 +264,7 @@
                                                     <div class="col-sm-6">
                                                     
                                                       <div class="form-group"> 
-                                                       <label>Paint Size</label><br><br>
+                                                       <label>Pant Size</label><br><br>
                                                         <div classs="form-control">
                                                                 <input type="hidden" name="stylePreference[1][name]" value="Breasts"/>
                                                                 <div class="btn-group btn-lg radio-group" data-toggle="buttons">
@@ -532,49 +555,34 @@
                                             <div class="tab-pane" id="yourrequirement">
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <div class="form-group">
-                                                            <label>Which specific service are your interested in ?</label>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-xs-12 ">
-                                                                            <div class="radio">
-                                                                              <label>
-                                                                                <input type="radio" name="firstOutfit" id="firstOutfit" value="Top">
-                                                                              New Purchase (Mention what)
-                                                                              </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-xs-12">
-                                                                            <div class="radio">
-                                                                              <label>
-                                                                                <input type="radio" name="firstOutfit" id="firstOutfitPant" value="Dress">
-                                                                              Matching outfit(send a picto gmil/whatsup)
-                                                                              </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-xs-12 ">
-                                                                            <div class="radio">
-                                                                              <label>
-                                                                                <input type="radio" name="firstOutfit" id="firstOutfitJeans" value="Jeans/Pant">
-                                                                                Styling exisiting clothes in your wardrobe.
-                                                                              </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-xs-12">
-                                                                            <div class="radio">
-                                                                              <label>
-                                                                                <input type="radio" name="firstOutfit" id="firstOutfit" value="Skirt">
-                                                                               Advice
-                                                                              </label>
-                                                                            </div>
-                                                                        </div>
-                                                                      
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div><!-- .form-group -->
+                                                                                
+<div class="radio radio-mention">
+  <label>
+   <input type="radio"  name="optionsRadios" id="NewPurchas" value="NewPurchas">
+    New Purchase (Mention what)
+    <input type="text" value="">
+  </label>
+</div>
+<div class="radio radio-mention">
+  <label>
+   <input type="radio" name="optionsRadios" id="Matchingoutfit" value="Matchingoutfit">
+ Matching outfit(send a pic to gmail/whatsup)
+   <input type="file" value="" multiple>
+  </label>
+</div>
+<div class="radio radio-mention">
+  <label>
+ <input type="radio" name="optionsRadios" id="exisitingclothes" value="exisitingclothes">
+    Styling exisiting clothes in your wardrobe.
+  </label>
+</div>
+<div class="radio radio-mention">
+  <label>
+ <input type="radio" name="optionsRadios" id="Advice" value="Advice">
+   Advice
+  </label>
+</div>
+             
                                                     </div><!-- .col-sm-12 -->
                                                     
 
