@@ -35,7 +35,7 @@ $(document).ready(function(){
                 return false;
             } else {
                 if (index ==1) {
-                    var data = JSON.stringify($('form#questionnaire').serializeJSON({useIntKeysAsArrayIndex: true}));
+                    var data = JSON.stringify($('form#connect_form').serializeJSON({useIntKeysAsArrayIndex: true}));
                     $.ajax({
                             url: "https://docs.google.com/forms/d/1_xhjjP2ySXaQ_jHqC1Nj-L03tcy64Dz0ydDlSZD_QxA/formResponse",
                             data: { "entry.1180832487": data
@@ -105,7 +105,7 @@ $(document).ready(function(){
 
     $(".btn-finish").button().click(function(){
         waitingDialog.show("Please wait...");
-        var data = JSON.stringify($('form#questionnaire').serializeJSON({useIntKeysAsArrayIndex: true}));
+        var data = JSON.stringify($('form#connect_form').serializeJSON({useIntKeysAsArrayIndex: true}));
         $.ajax({
             url: "https://docs.google.com/forms/d/1F41Hvu-lKT996Fj_UF78GBL0Xax026gHnR4Feydjic4/formResponse",
             data: { "entry.1378759943": data
