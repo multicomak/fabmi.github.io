@@ -1,8 +1,64 @@
+<?php
+//If the form is submitted
+if(isset($_POST['submit'])) {
+
+	//Check to make sure that the name field is not empty
+	if(trim($_POST['contactname']) == '') {
+		$hasError = true;
+	} else {
+		$name = trim($_POST['contactname']);
+	}
+
+	//Check to make sure that the phone field is not empty
+	if(trim($_POST['phone']) == '') {
+		$hasError = true;
+	} else {
+		$phone = trim($_POST['phone']);
+	}
+
+	//Check to make sure that the subject field is not empty
+	if(trim($_POST['subject']) == '') {
+		$hasError = true;
+	} else {
+		$subject = trim($_POST['subject']);
+	}
+
+	//Check to make sure sure that a valid email address is submitted
+	if(trim($_POST['email']) == '')  {
+		$hasError = true;
+	} else if (!filter_var( trim($_POST['email'], FILTER_VALIDATE_EMAIL ))) {
+		$hasError = true;
+	} else {
+		$email = trim($_POST['email']);
+	}
+
+	//Check to make sure comments were entered
+	if(trim($_POST['message']) == '') {
+		$hasError = true;
+	} else {
+		if(function_exists('stripslashes')) {
+			$comments = stripslashes(trim($_POST['message']));
+		} else {
+			$comments = trim($_POST['message']);
+		}
+	}
+
+	//If there is no error, send the email
+	if(!isset($hasError)) {
+		$emailTo = 'multicomak@gmail.com'; // Put your own email address here
+		$body = "Name: $name \n\nEmail: $email \n\nPhone Number: $phone \n\nSubject: $subject \n\nComments:\n $comments";
+		$headers = 'From: My Site <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+
+		mail($emailTo, $subject, $body, $headers);
+		$emailSent = true;
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
         <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, minimum-scale=1, user-scalable=yes, minimal-ui">
         <meta name="HandheldFriendly" content="true" />
         <meta name="MobileOptimized" content="width" />
         <meta name="apple-mobile-web-app-title" content="Fabmi-Fabulous">
@@ -152,14 +208,14 @@
                       <h3 class="h2"> Great Shopping Experience</h3>
                       <p class="lead text-light">This is totally a new and an awesome experience. I have always preferred shopping online because you get to choose from the variety of apparels under one roof. I came across this site recommended by a friend of mine and trust me ever since I am hooked on to it. I can now say I have a personal stylist.</p>
                       <div class="fm-author pull-right">
-                <figure class="author-pic pull-right"> <img src="image_n/avatar_1.jpg" class="" alt="Asha Krishnamurthy" title="Asha Krishnamurthy"></figure>
+                <figure class="author-pic pull-right"> <img src="image_n/avatar_1.jpg" class="" alt="Author image"></figure>
                 <span class="fm-author-info"> Asha Krishnamurthy </span> </div>
                     </li>
             <li>
                       <h3 class="h2">Right Dress for Me</h3>
                       <p class="lead text-light">I was looking for a dark coloured evening dress for myself and asked FabMi to find one suitable for my body type. Received a mail with a number of options and finally zeroed on one blue colour dress. When the package arrived I was little skeptical whether it would suit me or not but all my doubts were put to rest after I tried the dress as it not only suited me well but also looked very good. Thank you FabMi.</p>
                       <div class="fm-author pull-right">
-                <figure class="author-pic pull-right"> <img src="image_n/avatar_2.jpg" alt="Arti Joshi" title="Arti Joshi"></figure>
+                <figure class="author-pic pull-right"> <img src="image_n/avatar_2.jpg" alt="Author image"></figure>
                 <span class="fm-author-info"> Arti Joshi </span> </div>
                     </li>
             <li>
@@ -184,13 +240,25 @@
               <div class="row">
         <aside  class="col-xs-12  col-sm-12  col-md-12  col-lg-6 col-xl-6 ">
                   <ul class="nav nav-list">
-            <li class="col-100 h2"> <a class="text-dark motion" href="mailto:connect.fabmi@gmail.com" title="connect.fabmi@gmail.com"> <i class="flaticon-letter121 display-1"></i> connect.fabmi@gmail.com</a> </li>
-            <li class="col-100 h2"> <a class="text-success" href="tel:9686177334" title="9686177334"><i class="flaticon-whatsapp display-1"></i> +91 9686177334 </a></li>
+            <li class="col-100 h2"> <a class="text-dark motion" href="mailto:connect.fabmi@gmail.com"> <i class="flaticon-letter121 display-1"></i> connect.fabmi@gmail.com</a> </li>
+            <li class="col-100 h2"> <a class="text-success" href="tel:9686177334"><i class="flaticon-whatsapp display-1"></i> +91 9686177334 </a></li>
           </ul>
                 </aside>
         <aside class="col-xs-12  col-sm-12  col-md-12  col-lg-6 col-xl-6 col-xxl-5 pull-right ">
-                      <form role="form" method="post" action="" id="contactform">
-            <ul class="nav nav-form row-gutter">                      
+                      <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="contactform">
+            <ul class="nav nav-form row-gutter">
+             <?php if(isset($emailSent) && $emailSent == true) {  ?>
+            <li class="form-group  col-100 pull-left alert alert-success fade in">
+             
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button
+                ><p><strong>Message Successfully Sent!</strong></p>
+                <p>Thanks for contacting us!  <strong><?php echo $name;?></strong>! </p>
+
+              </li>
+            <?php } ?>
+                       
                       <li class="form-item form-group  col-100 col-sm-50 pull-left">
                 <label class="label-holder" for="edit-ss-email">NAME <span class="form-required" title="This field is required.">*</span></label>
                 <input clicktimes="1" type="text" id="contactname" name="contactname" class="form-text">
@@ -237,14 +305,14 @@
         <h3 class="h2"> Great Shopping Experience</h3>
         <p class="text-dark">This is totally a new and an awesome experience. I have always preferred shopping online because you get to choose from the variety of apparels under one roof. I came across this site recommended by a friend of mine and trust me ever since I am hooked on to it. I can now say I have a personal stylist.</p>
         <div class="fm-author pull-right">
-                  <figure class="author-pic pull-right"> <img src="image_n/avatar_1.jpg" alt="Asha Krishnamurthy" title="Asha Krishnamurthy"></figure>
+                  <figure class="author-pic pull-right"> <img src="image_n/avatar_1.jpg" alt="Author image"></figure>
                   <span class="fm-author-info"> Asha Krishnamurthy </span> </div>
       </li>
               <li class="fm-testimonial-item col-xs-12 col-md-6 col-xl-4">
         <h3 class="h2">Right Dress for Me</h3>
         <p class="text-dark">I was looking for a dark coloured evening dress for myself and asked FabMi to find one suitable for my body type. Received a mail with a number of options and finally zeroed on one blue colour dress. When the package arrived I was little skeptical whether it would suit me or not but all my doubts were put to rest after I tried the dress as it not only suited me well but also looked very good. Thank you FabMi.</p>
         <div class="fm-author pull-right">
-                  <figure class="author-pic pull-right"> <img src="image_n/avatar_2.jpg" alt="Arti Joshi" title="Arti Joshi"></figure>
+                  <figure class="author-pic pull-right"> <img src="image_n/avatar_2.jpg" alt="Author image"></figure>
                   <span class="fm-author-info"> Arti Joshi </span> </div>
       </li>
               <li class="fm-testimonial-item col-xs-12 col-md-6 col-xl-4">
