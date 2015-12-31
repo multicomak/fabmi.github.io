@@ -61,13 +61,15 @@
 <body>
 <div id="wrapper">
   <header class="navbar navbar-dark navbar-light navbar-fixed-top">
-  <div class="container-fluid"> <a class="navbar-brand pull-left motion" href="" title="Fabmi -Fabulous"> </a>
-    <ul class="nav pull-right nav-toolbar">
-      <li><a class=" btn-round bordered" href=""><i class="fa  fa-home"></i> </a></li>
-    </ul>
-  </div>
-</header>
-<br><br><br>
+    <div class="container-fluid"> <a class="navbar-brand pull-left motion" href="" title="Fabmi -Fabulous"> </a>
+      <ul class="nav pull-right nav-toolbar">
+        <li><a class=" btn-round bordered" href="index.html"><i class="fa  fa-home"></i> </a></li>
+      </ul>
+    </div>
+  </header>
+  <br>
+  <br>
+  <br>
   <!-- End #header -->
   <section id="content">
     <div class="md-margin"></div>
@@ -129,10 +131,9 @@
                           <label>Height</label>
                           <select name="height" class="form-control">
                             <option disabled="" selected="">- Height -</option>
-                            <option value="<5"> &lt; 5ft </option>
-                            <option value="5_5.3">5ft - 5ft 3inch </option>
-                            <option value="5.4_5.6"> 5ft 4inch - 5ft 6inch </option>
-                            <option value=">5.7"> &gt; 5ft 7inch </option>
+                            <option value="<5.5"> > 5ft 5inch </option>
+                            <option value="5.5-5.8">5ft 5inch - 5ft 8inch </option>
+                            <option value="5.8>"> > 5ft 8inch </option>
                           </select>
                         </div>
                         <!-- End .form-group --> 
@@ -173,14 +174,38 @@
                         </div>
                         <!-- End .form-group --> 
                       </div>
-                      <!-- End .col-sm-6 -->
+                      <!-- End .col-sm-6 --> 
+                    </div>
+                    <div class="row">
                       <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                          <label class="control-label">Weight</label>
+                          <select name="Weight" class="form-control">
+                            <option disabled="" selected="">- Weight -</option>
+                            <option value="<50"> < 50 </option>
+                            <option value="50-55">51-55 </option>
+                            <option value="56-60">56-60 </option>
+                            <option value="61-65">61-65 </option>
+                            <option value="66-70">66-70 </option>
+                            <option value="71-75"> 71-75 </option>
+                            <option value="76-80"> 76-80 </option>
+                            <option value="80+"> > 80 </option>
+                          </select>
+                          <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- End .form-group --> 
+                      </div>
+                      <!-- End .col-sm-5 .col-sm-offset-1 -->
+                      <div class="col-sm-5 ">
                         <div class="form-group">
                           <label class="control-label">Occupation</label>
                           <select name="occupation" class="form-control">
                             <option disabled="" selected="">- Occupation -</option>
-                            <option value="Working"> Working </option>
-                            <option value="Not_Working"> Home Maker </option>
+                            <option value="Client_based"> Client based </option>
+                            <option value="technical"> technical </option>
+                            <option value="Marketing"> Marketing </option>
+                            <option value="Self-employed"> Self-employed </option>
+                            <option value="Student"> Student </option>
                           </select>
                           <div class="help-block with-errors"></div>
                         </div>
@@ -387,45 +412,27 @@
                         <label>What brands you buy regularly ? <small>(Choose all that apply)</small></label>
                       </div>
                       <div class="checkbox-group" data-toggle="buttons">
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Chemistry">
-                          Chemistry </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                        <label class="col-md-3 col-sm-4 btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                          <input type="checkbox" name="preferredBrands[]" id="brands" value="UCB">
+                          UCB </label>
+                        <label class="col-md-3 col-sm-4 btn questionnaire-toggle brand-check" data-toggle="set-checked">
                           <input type="checkbox" name="preferredBrands[]" id="brands" value="AllenSolly">
                           Allen Solly </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                        <label class="col-md-3 col-sm-4 btn questionnaire-toggle brand-check" data-toggle="set-checked">
                           <input type="checkbox" name="preferredBrands[]" id="brands" value="Van Huesen">
                           Van Huesen </label>
-                        <label class="col-md-2 col-sm-3  btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Elle">
-                          Elle </label>
-                        <label class="col-md-2 col-sm-3  btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Vero Moda">
-                          Vero Moda </label>
-                        <label class="col-md-2 col-sm-3  btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Only">
-                          Only </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="W">
-                          W </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Biba">
-                          Biba </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Fab India">
-                          Fab India </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Levis">
-                          Levis </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="And">
-                          AND </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                        <label class="col-md-3 col-sm-4  btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Wills Lifestyle">
+                          Wills Lifestyle </label>
+                        <label class="col-md-3 col-sm-4  btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                          <input type="checkbox" name="preferredBrands[]" id="brands" value="International_Brands">
+                          International Brands</label>
+                        <label class="col-md-3 col-sm-4 btn questionnaire-toggle brand-check" data-toggle="set-checked">
+                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Peter-England">
+                          Peter England </label>
+                        <label class="col-md-3 col-sm-4 btn questionnaire-toggle brand-check" data-toggle="set-checked">
                           <input type="checkbox" name="preferredBrands[]" id="brands" value="NonBranded">
                           Non Branded </label>
-                        <label class="col-md-2 col-sm-3 btn questionnaire-toggle brand-check" data-toggle="set-checked">
-                          <input type="checkbox" name="preferredBrands[]" id="brands" value="Others">
-                          Others </label>
                       </div>
                     </div>
                     <hr>
@@ -440,58 +447,53 @@
                             <div class="col-md-6">
                               <div class="row">
                                 <div class="col-xs-12 ">
-                               
-                        
-<div class="radio radio-mention">
-  <label>
-   <input type="radio"  name="optionsRadios" id="NewPurchas" value="NewPurchas">
-    New Purchase (Mention what)
-    <input type="text" value="">
-  </label>
-</div>
-<div class="radio radio-mention">
-  <label>
-   <input type="radio" name="optionsRadios" id="Matchingoutfit" value="Matchingoutfit">
- Matching outfit(send a pic to gmail/whatsup)
-   <input type="file" value="" multiple>
-  </label>
-</div>
-<div class="radio radio-mention">
-  <label>
- <input type="radio" name="optionsRadios" id="exisitingclothes" value="exisitingclothes">
-    Styling exisiting clothes in your wardrobe.
-  </label>
-</div>
-<div class="radio radio-mention">
-  <label>
- <input type="radio" name="optionsRadios" id="Advice" value="Advice">
-   Advice
-  </label>
-</div>
-                                
-                              
+                                  <div class="radio radio-mention">
+                                    <label>
+                                      <input type="radio"  name="YOUR_REQUIREMENT" data-error="Please Enter Mention what" id="NewPurchas" value="NewPurchas">
+                                      New Purchase (Mention what) *
+                                      <input type="text" value="" id="NewPurchas" name="NewPurchas" data-error="Please Enter Mention what" class="form-control" required>
+                                    </label>
+                                  </div>
+                                  <div class="radio radio-mention">
+                                    <label>
+                                      <input type="radio" name="YOUR_REQUIREMENT" required id="Matchingoutfit" value="Matchingoutfit">
+                                      Matching outfit(send a pic to gmail/whatsup)
+                                      <input type="file" value="" id="Matchingoutfit" name="Matchingoutfit" multiple>
+                                    </label>
+                                  </div>
+                                  <div class="radio radio-mention">
+                                    <label>
+                                      <input type="radio" name="YOUR_REQUIREMENT" id="exisitingclothes" value="exisitingclothes">
+                                      Styling exisiting clothes in your wardrobe. </label>
+                                  </div>
+                                  <div class="radio radio-mention">
+                                    <label>
+                                      <input type="radio" name="YOUR_REQUIREMENT" id="Advice" value="Advice">
+                                      Advice </label>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
+                          <!-- .form-group --> 
                         </div>
-                        <!-- .form-group --> 
+                        <!-- .col-sm-12 --> 
+                        
                       </div>
-                      <!-- .col-sm-12 --> 
-                      
+                      <!-- .row --> 
                     </div>
-                    <!-- .row --> 
+                    <!-- .tab-pane --> 
                   </div>
-                  <!-- .tab-pane --> 
-                </div>
-                <div class="wizard-footer">
-                  <div class="pull-right">
-                    <input type='button' class='btn btn-custom-2 btn-next btn-lg' name='next' value='Next' />
-                    <input type='button' class='btn btn-custom btn-done btn-finish btn-lg' name='finish' id="connect" value='Lets Connect' />
+                  <div class="wizard-footer">
+                    <div class="pull-right">
+                      <input type='button' class='btn btn-custom-2 btn-next btn-lg' name='next' value='Next' />
+                      <input type='button' class='btn btn-custom btn-done btn-finish btn-lg' name='finish' id="connect" value='Lets Connect' />
+                    </div>
+                    <div class="pull-left">
+                      <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />
+                    </div>
+                    <div class="clearfix"></div>
                   </div>
-                  <div class="pull-left">
-                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />
-                  </div>
-                  <div class="clearfix"></div>
                 </div>
               </div>
             </form>
@@ -502,11 +504,11 @@
     </div>
   </section>
   <footer class="footer-bottom text-light motion">
-  <div class="item-box"> <a  href="https://facebook.com/fabmi.in" target="_blank"><i  class="fa fa-facebook"></i></a> </a></div>
-  <div class="item-box"><a  href="https://twitter.com/fab_mi" target="_blank" > <i class="fa fa-twitter"></i></a> </div>
-  <div class="item-box"><a  href="mailto:connect.fabmi@gmail.com"   target="_blank"> <i class="fa fa-envelope-o"></i> </a></div>
-  <div class="item-box"><small class="text-uppercase text-gray">© 2015 Powered by FabMi™. All Rights Reserved.</small></div>
-</footer>
+    <div class="item-box"> <a  href="https://facebook.com/fabmi.in" target="_blank"><i  class="fa fa-facebook"></i></a> </a></div>
+    <div class="item-box"><a  href="https://twitter.com/fab_mi" target="_blank" > <i class="fa fa-twitter"></i></a> </div>
+    <div class="item-box"><a  href="mailto:connect.fabmi@gmail.com"   target="_blank"> <i class="fa fa-envelope-o"></i> </a></div>
+    <div class="item-box"><small class="text-uppercase text-gray">© 2015 Powered by FabMi™. All Rights Reserved.</small></div>
+  </footer>
 </div>
 <!-- End #wrapper --> 
 <a href="#" id="scroll-top" title="Scroll to Top"><i class="fa fa-angle-up"></i></a><!-- End #scroll-top --> 
