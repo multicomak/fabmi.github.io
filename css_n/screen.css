@@ -229,14 +229,23 @@ h6, .h6 {
 }
 
 
-.carousel-inner > .carousel-item {  height:100vh;}
+body:not(.blog-page)  .carousel-inner > .carousel-item {  height:100vh;}
+body:not(.blog-page) .carousel {
+	min-height: 70%;
+}
+
+body:not(.blog-page) .carousel {
+	min-height: 110%;
+}
+body.blog-page .carousel .carousel-inner > .carousel-item { min-height:70vh;}
 
 
 @media only screen and (min-width: 544px) and (max-width:768px) {
-.carousel-caption {
+body:not(.blog-page) .carousel-caption {
 	padding-bottom: 56px;
 	top: 112px;
 }
+
 .carousel-caption .caption-box {
 	display: table-cell;
 	vertical-align: middle;
@@ -565,9 +574,8 @@ h6, .h6 {
 }
 .row.no-space {
 	margin-left: -12px !important;
-	;
 	margin-right: -12px !important;
-	;
+	
 }
 .row.no-space > [class^="col-"]:first-child {
 	padding-left: 0px !important;
